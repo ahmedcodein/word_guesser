@@ -1,32 +1,65 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Word Guesser
 
-Welcome,
+## 1. Introduction
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## 2. Development Process
 
-## Reminders
+The process followed by the author consists of five phases, these are:
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+1. Research
+2. Objective
+3. Requirements Definition
+4. Planning
+5. Execution
 
-## Creating the Heroku app
+These phases are presented below with a detailed account of each phase is presented in the subsequent sections.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### 2.1. Research and Selection Criteria
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### 2.2. Project Objective
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+#### 2.2.1. Website Owner Objectives
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+#### 2.2.2. Website Visitor Objectives
 
-Connect your GitHub repository and deploy as normal.
+### 2.3. Website Requirements
 
-## Constraints
+### 2.4. Planning
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#### 2.4.1. Game Logic
 
----
+### 2.5. Execution
 
-Happy coding!
+#### 2.5.1. Technologies Used
+
+#### 2.5.2 Test Results
+
+The test results are summarized in the table below.
+
+| Test ID No. | Test Name | Test Result | Test Comment|
+| ----------- |---------- |------------ |------------ |
+| 1 | | | |
+
+#### 2.5.3. Bugs
+
+##### 2.5.3.1. Fixed Bugs
+
+| Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
+| -----------| ----------- |---------- |------------ |------------ |
+|1| | | | |
+
+##### 2.5.3.2. Unfixed Bugs
+
+## 2.5.4. Deployment, Clone and Fork Procedures
+
+## 3. Features
+
+## 4 Future Work
+
+## 5 Credits
+
+### 5.1 References
+
+### 5.2. Content and Tools
+
+### 5.3. Acknowledgement
