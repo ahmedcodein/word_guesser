@@ -41,10 +41,10 @@ Any additional code will have been written in the final stages of the implementa
 ###### Word Guesser Pseudocode
 
 ```
-setup_game:
+words_storage:
 
-    - import the word_list
-    - return word_list
+    - create a words list
+    - return word_storage
 
 initiate_game:
 
@@ -73,14 +73,14 @@ difficulty_selection:
 
     - return difficulty_level
 
-difficulty_level:
+word_selector:
 
     - if difficulty_level is easy:
-        - randomly choose word with 3-letter length from the word_list
+        - randomly choose word with 3-letter length from the words_storage
     - else if difficulty_level is intermediate: 
-        - randomly choose a word with 4-letter length from the word_list
+        - randomly choose a word with 4-letter length from the words_storage
     - else:
-        - randomly choose a word with no less than five-letter length from the word_list
+        - randomly choose a word with no less than five-letter length from the words_storage
         - store the word in word_container
         - return word_container
 
