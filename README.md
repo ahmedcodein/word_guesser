@@ -155,7 +155,7 @@ Restart_game:
 
 In this section, the conceptual data model of game is presented. Up until this point, only the initial parts of the game is considered when developing the data model.
 
-![Conceptual Data Model](..//word_guesser/docs/images/conceptual_data_model.png)
+![Conceptual Data Model](docs/images/conceptual_data_model.png)
 ### 2.5. Execution
 
 #### 2.5.1. Technologies Used
