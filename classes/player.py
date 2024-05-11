@@ -1,3 +1,4 @@
+from classes.difficlultyselection import DifficultySelection
 class Player:
     """
     Ask for user first name
@@ -34,3 +35,4 @@ class Player:
         Print out the welcome message with the first name
         """
         self.welcome_the_player = print(f"\nWelcome {self.first_name.capitalize()}!\n")
+        DifficultySelection()
