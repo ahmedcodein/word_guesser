@@ -17,7 +17,7 @@ class Player:
         The method for input the first name
         and for checking the name validity
         """
-        self.first_name = input("Please enter your first name: ").lower().strip("")
+        self.first_name = input("Please enter your first name:\n ").lower().strip("")
         if len(self.first_name) > 10:
             print("\nPlease enter a name with less than 11 letters\n")
             Player()

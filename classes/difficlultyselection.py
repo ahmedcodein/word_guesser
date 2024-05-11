@@ -27,7 +27,7 @@ class DifficultySelection:
         """
         while True:
             try:
-                self.difficulty_level = int(input())
+                self.difficulty_level = int(input("\n:"))
                 if self.difficulty_level == 1:
                     print(
                         f"\nyou choose {self.easy.capitalize()} as the difficulty level\n"
