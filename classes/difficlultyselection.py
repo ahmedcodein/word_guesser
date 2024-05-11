@@ -1,3 +1,7 @@
+from classes.wordsbank import WordBank
+from classes.wordselector import WordSelector
+
+
 class DifficultySelection:
     """
     Present the user the three game difficulty options
@@ -36,6 +40,7 @@ class DifficultySelection:
                     print(
                         f"\nyou choose {self.difficult.capitalize()} as the difficulty level\n"
                     )
+                WordSelector(self.difficulty_level, WordBank().words)
                 return self.difficulty_level
 
             except ValueError:
