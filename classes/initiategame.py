@@ -1,7 +1,13 @@
 import os
 from getch import pause
+from classes.player import Player
 
 class InitiateGame:
+    """
+    Intiate the game by a welcome message and instructions
+    Then clear the screen upon user order
+    Intiate the Player class
+    """
     def __init__(self):
         self.welcome()
         self.intructions()
@@ -33,6 +39,7 @@ class InitiateGame:
     def clear_screen(self):
         """
         Clear the console screen
+        Initiate the Player class
         """
         # The following 4 lines of code is taken from: 
         # https://www.delftstack.com/howto/python/python-clear-console/
@@ -41,3 +48,4 @@ class InitiateGame:
         if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
             command = "cls"
         os.system(command)
+        Player()
