@@ -1,4 +1,5 @@
 import random
+from classes.playerguess import PlayerGuess
 
 
 class WordSelector:
@@ -7,10 +8,10 @@ class WordSelector:
      and randomly select a word for the user to guess accordingly
     """
 
-    def __init__(self, difficulty_level, word_list):
+    def __init__(self, difficulty_level, word_bank):
         self.difficulty_level = difficulty_level
-        self.word_list = word_list
-        self.counter = len(word_list)
+        self.word_bank = word_bank
+        self.counter = len(word_bank)
         self.difficulty_mapper()
 
     def difficulty_mapper(self):
@@ -28,8 +29,9 @@ class WordSelector:
         else:
             self.word_length = 6
         while self.counter > 0:
-            self.word_container = random.choice(self.word_list)
+            self.word_container = random.choice(self.word_bank)
             self.counter -= 1
             if len(self.word_container) == self.word_length:
                 print(f'"Only for TEST", the random word is: {self.word_container}')
-                return self.word_container
+                break
+        PlayerGuess(self.word_length, list(self.word_container))
