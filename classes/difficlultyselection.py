@@ -10,38 +10,41 @@ class DifficultySelection:
 
     def __init__(self):
         self.message = print(
-            "Please enter 1 or 2 or 3 for the difficulty level:\n\n 1. Easy\n 2. Intermediate\n 3. Difficult\n"
+            "Please enter either 1 or 2 or 3 for the difficulty level:\n\n"
+            "1. Easy\n"
+            "2. Intermediate\n"
+            "3. Difficult\n"
         )
-        self.difficulty_level = None
-        self.easy = "easy"
-        self.intermediate = "intermediate"
-        self.difficult = "difficult"
-        self.display_difficulty_level()
+        self.difficulty_level = {"easy": 1, "intermediate": 2, "difficult": 3}
+        self.get_difficulty_level()
 
-    def display_difficulty_level(self):
+    def get_difficulty_level(self):
         """
-        Display the difficulty options
-        Check if the user input are valid
+        Allow the user to input the difficulty choice
+        Check if the user input is valid
         If input is not valid, raise the error to the user
         If the input is valid, display the user choice
+        Go to the WordSelector
         """
         while True:
             try:
-                self.difficulty_level = int(input("\n:"))
-                if self.difficulty_level == 1:
-                    print(
-                        f"\nyou choose {self.easy.capitalize()} as the difficulty level\n"
-                    )
-                elif self.difficulty_level == 2:
-                    print(
-                        f"\nyou choose {self.intermediate.capitalize()} as the difficulty level\n"
-                    )
-                elif self.difficulty_level == 3:
-                    print(
-                        f"\nyou choose {self.difficult.capitalize()} as the difficulty level\n"
-                    )
-                WordSelector(self.difficulty_level, WordBank().words)
-                return self.difficulty_level
+                self.difficulty_level_choice = int(input("Please enter you choice here: " "\n"))
+                loop = True
+                for key, value in self.difficulty_level.items():
+                    if value == self.difficulty_level_choice and loop == True:
+                        print(
+                            f"\nyou choose {key.capitalize()} as the difficulty level!\n"
+                        )
+                        WordSelector(value, WordBank().words)
+                        loop = False
+                        return loop
+                    elif (
+                        self.difficulty_level_choice
+                        not in self.difficulty_level.values()
+                    ):
+                        raise ValueError
+                    else:
+                        continue
 
             except ValueError:
-                print("Invalid choice number, please enter either 1,2 or 3:")
+                print("\nInvalid choice, please enter either 1,2 or 3:\n")
