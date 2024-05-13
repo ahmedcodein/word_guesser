@@ -1,4 +1,10 @@
 class PlayerGuess:
+    """
+    This class gets player guesses
+    It converts the input letters into a list
+    Then it returns the list for further 
+    processing
+    """
 
     def __init__(self, word_length, word_container):
         self.word_container = word_container
@@ -7,6 +13,11 @@ class PlayerGuess:
         self.get_player_guess()
 
     def get_player_guess(self):
+        """
+        Get the plyer guess
+        Check for its validity
+        return a list of all the guessed letters
+        """
         while True:
             try:
                 self.player_letter_guessed = input("Please enter a letter:\n ")
