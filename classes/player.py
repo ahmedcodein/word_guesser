@@ -1,4 +1,4 @@
-from classes.difficlultyselection import DifficultySelection
+from classes.difficultyselection import DifficultySelection
 
 
 class Player:
