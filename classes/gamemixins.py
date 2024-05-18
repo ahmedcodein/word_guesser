@@ -22,12 +22,16 @@ class GameMixins:
         os.system(command)
 
     def reset_game(self):
+        """
+        This method resets or exits the game 
+        upon the player request
+        """
+
         player_input = input(
-            "\nWould you like to reset the game"
-            "\nPlease type either yes or no "
+            "\nWould you like to reset the game" "\nPlease type either yes or no "
         )
-        if player_input == 'yes':
-            print ("The game is reseting ... ")
+        if player_input == "yes":
+            print("The game is reseting ... ")
             pause()
             self.clear_screen()
         else:
