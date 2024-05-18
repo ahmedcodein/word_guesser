@@ -15,7 +15,7 @@ class GameMixins:
         # The following 4 lines of code is taken from:
         # https://www.delftstack.com/howto/python/python-clear-console/
         # and https://github.com/dnlbowers/battleships
-        ommand = "clear"
+        command = "clear"
         if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
             command = "cls"
-            os.system(command)
+        os.system(command)

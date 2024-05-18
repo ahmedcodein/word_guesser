@@ -1,9 +1,10 @@
 import os
 from getch import pause
 from classes.player import Player
+from classes.gamemixins import GameMixins
 
 
-class InitiateGame:
+class InitiateGame(GameMixins):
     """
     Intiate the game by a welcome message and instructions
     Then clear the screen upon user order
@@ -13,7 +14,6 @@ class InitiateGame:
     def __init__(self):
         self.welcome()
         self.intructions()
-        self.clear_screen()
 
     def welcome(self):
         """
@@ -39,17 +39,5 @@ class InitiateGame:
         """
         )
         pause()
-
-    def clear_screen(self):
-        """
-        Clear the console screen
-        Initiate the Player class
-        """
-        # The following 4 lines of code is taken from:
-        # https://www.delftstack.com/howto/python/python-clear-console/
-        # and https://github.com/dnlbowers/battleships
-        command = "clear"
-        if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
-            command = "cls"
-        os.system(command)
+        self.clear_screen()
         Player()
