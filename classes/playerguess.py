@@ -11,9 +11,6 @@ class PlayerGuess:
         self.wrong_letters_container = []
         self.count = 0
         self.get_player_guess()
-        self.letter_is_wrong()
-        self.letter_is_correct()
-        self.evaluate_guessed_letters()
 
     def get_player_guess(self):
         """
