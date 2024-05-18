@@ -9,14 +9,18 @@ class DifficultySelection:
     """
 
     def __init__(self):
-        self.message = print(
+        self.game_main_loop()
+
+    def game_main_loop(self):
+        while True:
+            self.message = print(
             "Please enter either 1 or 2 or 3 for the difficulty level:\n\n"
             "1. Easy\n"
             "2. Intermediate\n"
             "3. Difficult\n"
-        )
-        self.difficulty_level = {"easy": 1, "intermediate": 2, "difficult": 3}
-        self.get_difficulty_level()
+            )
+            self.difficulty_level = {"easy": 1, "intermediate": 2, "difficult": 3}
+            self.get_difficulty_level()
 
     def get_difficulty_level(self):
         """
@@ -28,7 +32,9 @@ class DifficultySelection:
         """
         while True:
             try:
-                self.difficulty_level_choice = int(input("Please enter you choice here: " "\n"))
+                self.difficulty_level_choice = int(
+                    input("Please enter you choice here: " "\n")
+                )
                 loop = True
                 for key, value in self.difficulty_level.items():
                     if value == self.difficulty_level_choice and loop == True:
