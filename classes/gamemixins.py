@@ -1,4 +1,5 @@
 import os
+from getch import pause
 
 
 class GameMixins:
@@ -19,3 +20,15 @@ class GameMixins:
         if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
             command = "cls"
         os.system(command)
+
+    def reset_game(self):
+        player_input = input(
+            "\nWould you like to reset the game"
+            "\nPlease type either yes or no "
+        )
+        if player_input == 'yes':
+            print ("The game is reseting ... ")
+            pause()
+            self.clear_screen()
+        else:
+            exit()
