@@ -1,4 +1,7 @@
-class PlayerGuess:
+from classes.gamemixins import GameMixins
+
+
+class PlayerGuess(GameMixins):
     """
     This class gets player guesses
     and then processes the inputs
@@ -10,6 +13,7 @@ class PlayerGuess:
         self.correct_letters_container = ["_"] * word_length
         self.wrong_letters_container = []
         self.count = 0
+        self.reset_signal = False
         self.get_player_guess()
 
     def get_player_guess(self):
@@ -20,6 +24,8 @@ class PlayerGuess:
         to evaluate the guessed letters method
         """
         while True:
+            if self.game_over(self.reset_signal):
+                break
             try:
                 self.letter_guessed = input("Please enter a letter:\n ")
                 if self.letter_guessed.isalpha() and len(self.letter_guessed) == 1:
@@ -40,8 +46,8 @@ class PlayerGuess:
     def evaluate_guessed_letters(self):
         """
         Evaluates the player guess
-        and it handovers the result to 
-        the respective method based 
+        and it handovers the result to
+        the respective method based
         on the guess correctness
         """
 
@@ -54,7 +60,7 @@ class PlayerGuess:
         """
         Checks if the letter is already guessed
         if not, it adds it to wrong letters storage
-        then it hands over a counter 
+        then it hands over a counter
         to check if game lose occures
         """
 
@@ -69,7 +75,7 @@ class PlayerGuess:
         """
         Checks if the letter is already guesssed
         if not, it adds it to the correct letters storage
-        then it hands over a counter 
+        then it hands over a counter
         to check if game win occurs
         """
 
@@ -86,7 +92,7 @@ class PlayerGuess:
     def game_status(self):
         """
         checks if win or lose occures
-        if so, it announces 
+        if so, it announces
         the final game status
         """
 
@@ -96,10 +102,20 @@ class PlayerGuess:
                 f"\nThe correct word is {''.join(self.word_container).capitalize()}, "
                 "you lost this time.\n"
             )
-            exit()
+            self.reset_game()
+            self.reset_signal = True
+            self.game_over(self.reset_signal)
         elif self.count == self.word_length:
             print(
                 "Great Job, you guessed the word!"
                 f"\nThe correct word is {''.join(self.word_container).capitalize()}"
             )
-            exit()
+            self.reset_game()
+            self.reset_signal = True
+            self.game_over(self.reset_signal)
+
+    def game_over(self, reset_signal):
+        if reset_signal:
+            return True
+        else:
+            return False
