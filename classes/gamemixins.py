@@ -17,22 +17,40 @@ class GameMixins:
         # https://www.delftstack.com/howto/python/python-clear-console/
         # and https://github.com/dnlbowers/battleships
         command = "clear"
-        if os.name in ("nt", "dos"):  # If Machine is running on Windows, use cls
+        # If Machine is running on Windows, use cls
+        if os.name in ("nt", "dos"):
             command = "cls"
         os.system(command)
 
     def reset_game(self):
         """
-        This method resets or exits the game 
+        This method resets or exits the game
         upon the player request
         """
-
-        player_input = input(
-            "\nWould you like to reset the game" "\nPlease type either yes or no "
-        )
-        if player_input == "yes":
-            print("The game is reseting ... ")
-            pause()
-            self.clear_screen()
-        else:
-            exit()
+        print(
+            "\nWould you like to reset the game? "
+            "\nPlease type either yes or no: "
+            )
+        loop = True
+        while True:
+            if not loop:
+                break
+            try:
+                player_input = input().lower().strip("")
+                if player_input == "yes" or player_input == "y":
+                    print("The game is reseting ... ")
+                    pause()
+                    self.clear_screen()
+                    loop = False
+                    return loop
+                elif player_input == "no" or player_input == "n":
+                    exit()
+                else:
+                    raise ValueError
+            except ValueError:
+                print(
+                    "\nNot a valid input!\n"
+                    "Please type: "
+                    "'yes' for reset "
+                    ", 'no' for leaving the game."
+                )
