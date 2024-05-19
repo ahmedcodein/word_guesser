@@ -30,10 +30,11 @@ class InitiateGame(GameMixins):
             """
         The job is to guess an English word by entering its letters one by one.
         You have three difficulty levels to choose from:\n
-        - Easy for 3-letter words 
-        - Intermediate for 5-letter words 
+        - Easy for 3-letter words
+        - Intermediate for 5-letter words
         - Difficult for 6-letter words \n
-        Based on the difficulty level, you will have 3, 5 or 6 chances respectively. 
+        Based on the difficulty level, you will have:
+        3 or 5 or 6 chances respectively.
         Choose wisely!.\n
         Have fun!\n
         """
