@@ -17,20 +17,15 @@ class Player:
         The method for input the first name
         and for checking the name validity
         """
-        self.first_name = input("Please enter your first name:\n ").lower().strip("")
-        if len(self.first_name) > 10:
-            print("\nPlease enter a name with less than 11 letters\n")
-            Player()
-        elif self.first_name == "":
-            print(
-                "\nI see what you are doing here!"
-                "\nYou want me to guess your name, don't you?"
-                "\nyou have it!\n"
-            )
-            self.first_name = "Guesser"
-        elif self.first_name == "clear":
-            print("\nOh, such a dangourse word to use in this console ;)!\n")
-            self.first_name = "clear"
+        while True:
+            try:
+                self.first_name = input("Please enter your first name:\n ").lower().strip("")
+                if len(self.first_name) > 10:
+                    print("\nPlease enter a name with less than 11 letters\n")
+                else:
+                    break
+            except KeyboardInterrupt:
+                print("\nCtrl C is not allowed!")
 
     def welcome_the_player(self):
         """
