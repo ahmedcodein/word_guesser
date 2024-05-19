@@ -43,8 +43,8 @@ class DifficultySelection:
                 for key, value in self.difficulty_level.items():
                     if value == self.difficulty_level_choice and loop is True:
                         print(
-                            f"You chose '{key.capitalize()}' "
-                            "as the difficulty level!\n"
+                            f"\nYou chose '{key.capitalize()}' "
+                            "as the difficulty level!"
                         )
                         WordSelector(value, WordBank().words)
                         loop = False
