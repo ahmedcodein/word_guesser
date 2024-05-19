@@ -1,7 +1,10 @@
+import colorama
 import os
 from getch import pause
+from colorama import Fore
 from classes.player import Player
 from classes.gamemixins import GameMixins
+colorama.init(autoreset=True)
 
 
 class InitiateGame(GameMixins):
@@ -18,8 +21,8 @@ class InitiateGame(GameMixins):
         """
         Print out a welcome message
         """
-        print(
-            """
+        print(Fore.LIGHTGREEN_EX +
+              """
             ██╗    ███████████╗     ██████╗██████╗███╗   ██████████╗
             ██║    ████╔════██║    ██╔════██╔═══██████╗ ██████╔════╝
             ██║ █╗ ███████╗ ██║    ██║    ██║   ████╔████╔███████╗
@@ -38,8 +41,8 @@ class InitiateGame(GameMixins):
             ██║   ████║   ████╔══╝ ╚════██╚════████╔══╝ ██╔══██╗
             ╚██████╔╚██████╔██████████████████████████████║  ██║
              ╚═════╝ ╚═════╝╚══════╚══════╚══════╚══════╚═╝  ╚═╝
-            """
-        )
+              """
+              )
         pause()
         self.clear_screen()
         self.intructions()
@@ -49,7 +52,7 @@ class InitiateGame(GameMixins):
         Display the game rules and instructions
         then pause and wait for the user action to proceed
         """
-        instructions_rules = """
+        instructions_rules = Fore.LIGHTGREEN_EX + """
         ########################################################
         #                                                      #
         #       - The job is to guess an English word          #
