@@ -32,6 +32,5 @@ class WordSelector:
             self.word_container = random.choice(self.word_bank)
             self.counter -= 1
             if len(self.word_container) == self.word_length:
-                print(f'"Only for TEST", the random word is: {self.word_container}')
                 break
         PlayerGuess(self.word_length, list(self.word_container))
