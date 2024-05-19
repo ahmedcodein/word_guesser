@@ -42,6 +42,8 @@ class PlayerGuess(GameMixins):
                 print("- No Special characters.")
                 print("- No spaces.")
                 print("- No numbers\n")
+            except KeyboardInterrupt:
+                print("\nCtrl C is not allowed!")
 
     def evaluate_guessed_letters(self):
         """
