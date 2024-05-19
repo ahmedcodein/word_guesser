@@ -54,3 +54,10 @@ class GameMixins:
                     "'yes' for reset "
                     ", 'no' for leaving the game."
                 )
+            except KeyboardInterrupt:
+                print(
+                    "\nCtrl C is not allowed!\n"
+                    "Please type: "
+                    "'yes' for reset "
+                    ", 'no' for leaving the game."
+                )
