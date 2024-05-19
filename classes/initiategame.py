@@ -13,7 +13,6 @@ class InitiateGame(GameMixins):
 
     def __init__(self):
         self.welcome()
-        self.intructions()
 
     def welcome(self):
         """
@@ -43,6 +42,7 @@ class InitiateGame(GameMixins):
         )
         pause()
         self.clear_screen()
+        self.intructions()
 
     def intructions(self):
         """
