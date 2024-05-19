@@ -27,8 +27,11 @@ class PlayerGuess(GameMixins):
             if self.game_over(self.reset_signal):
                 break
             try:
-                self.letter_guessed = input("Please enter a letter:\n ")
-                if self.letter_guessed.isalpha() and len(self.letter_guessed) == 1:
+                self.letter_guessed = input(
+                    "Please enter a letter:\n "
+                    )
+                if (self.letter_guessed.isalpha()
+                   and len(self.letter_guessed)) == 1:
                     self.evaluate_guessed_letters()
                 elif (
                     len(self.letter_guessed) > 1
@@ -70,7 +73,7 @@ class PlayerGuess(GameMixins):
             print("You have already chosen this letter")
         else:
             self.wrong_letters_container.append(self.letter_guessed)
-            print(f"This is the wrong_letter_container: {self.wrong_letters_container}")
+            print(f"Wrong Guesses: {self.wrong_letters_container}")
         self.game_status()
 
     def letter_is_correct(self):
@@ -101,16 +104,18 @@ class PlayerGuess(GameMixins):
         if len(self.wrong_letters_container) == self.word_length:
             print(
                 f"\nAuch, you had {self.word_length} worng attempts. "
-                f"\nThe correct word is {''.join(self.word_container).capitalize()}, "
-                "you lost this time.\n"
+                "\nThe correct word is "
+                f"{''.join(self.word_container).capitalize()}. "
+                "\nYou lost this time.\n"
             )
             self.reset_game()
             self.reset_signal = True
             self.game_over(self.reset_signal)
         elif self.count == self.word_length:
             print(
-                "Great Job, you guessed the word!"
-                f"\nThe correct word is {''.join(self.word_container).capitalize()}"
+                "\nGreat Job, you guessed the word!"
+                "\nThe correct word is "
+                f"{''.join(self.word_container).capitalize()}."
             )
             self.reset_game()
             self.reset_signal = True
