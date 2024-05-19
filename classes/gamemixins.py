@@ -1,4 +1,5 @@
 import os
+import time
 from getch import pause
 
 
@@ -38,7 +39,11 @@ class GameMixins:
             try:
                 player_input = input().lower().strip("")
                 if player_input == "yes" or player_input == "y":
-                    print("The game is reseting ... ")
+                    self.clear_screen()
+                    time.sleep(1)
+                    print("The Game is reseting ... ")
+                    time.sleep(1)
+                    print("The Game is reset!")
                     pause()
                     self.clear_screen()
                     loop = False
