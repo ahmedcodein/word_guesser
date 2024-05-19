@@ -49,19 +49,29 @@ class InitiateGame(GameMixins):
         Display the game rules and instructions
         then pause and wait for the user action to proceed
         """
-        print(
-            """
-        The job is to guess an English word by entering its letters one by one.
-        You have three difficulty levels to choose from:\n
-        - Easy for 3-letter words
-        - Intermediate for 5-letter words
-        - Difficult for 6-letter words \n
-        Based on the difficulty level, you will have:
-        3 or 5 or 6 chances respectively.
-        Choose wisely!.\n
-        Have fun!\n
+        instructions_rules = """
+        ########################################################
+        #                                                      #
+        #       - The job is to guess an English word          #
+        #         by entering its letters one by one.          #
+        #                                                      #
+        #        - You have three difficulty levels to         #
+        #          choose from:                                #
+        #                                                      #
+        #           # Easy for 3-letter words                  #
+        #           # Intermediate for 5-letter words          #
+        #           # Difficult for 6-letter words             #
+        #                                                      #
+        #        - Based on the difficulty level, you will     #
+        #          have:                                       #
+        #                                                      #
+        #           # 3 or 5 or 6 chances respectively.        #
+        #                                                      #
+        #                                                      #
+        #        Have fun!                                     #
+        ########################################################
         """
-        )
+        print(instructions_rules)
         pause()
         self.clear_screen()
         Player()
