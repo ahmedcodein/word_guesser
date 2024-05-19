@@ -54,3 +54,5 @@ class DifficultySelection:
 
             except ValueError:
                 print("\nInvalid choice, please enter either 1,2 or 3:\n")
+            except KeyboardInterrupt:
+                print("\nCtrl C is not allowed!")
