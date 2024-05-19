@@ -91,7 +91,11 @@ class PlayerGuess(GameMixins):
                 if self.letter_guessed == letter:
                     self.count += 1
                     self.correct_letters_container[index] = letter
-            print("".join(self.correct_letters_container).upper())
+            print(
+                "Correct Guesses: "
+                +
+                "".join(self.correct_letters_container).upper()
+                )
         self.game_status()
 
     def game_status(self):
