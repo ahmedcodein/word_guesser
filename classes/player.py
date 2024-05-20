@@ -33,5 +33,7 @@ class Player:
         """
         Print out the welcome message with the first name
         """
-        self.welcome_the_player = print(f"\nWelcome {self.first_name.capitalize()}!\n")
+        self.welcome_the_player = print(
+            f"\nWelcome {self.first_name.capitalize()}!\n"
+            )
         DifficultySelection()
