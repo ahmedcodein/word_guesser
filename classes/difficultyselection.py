@@ -1,8 +1,8 @@
-from classes.wordsbank import WordBank
 from classes.wordselector import WordSelector
+from classes.gamemixins import GameMixins
 
 
-class DifficultySelection:
+class DifficultySelection(GameMixins):
     """
     Presents the user the three game difficulty options
     Get the choice from the user
@@ -53,7 +53,7 @@ class DifficultySelection:
                             f"\nYou chose '{key.capitalize()}' "
                             "as the difficulty level!"
                         )
-                        WordSelector(value, WordBank().words)
+                        WordSelector(value, self.words_bank())
                         loop = False
                         return loop
                     elif (
