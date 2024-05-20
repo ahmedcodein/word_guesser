@@ -126,6 +126,10 @@ class PlayerGuess(GameMixins):
             self.game_over(self.reset_signal)
 
     def game_over(self, reset_signal):
+        """
+        It is used to signal a reset 
+        is needed
+        """
         if reset_signal:
             return True
         else:

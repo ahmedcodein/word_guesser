@@ -4,7 +4,7 @@ from classes.wordselector import WordSelector
 
 class DifficultySelection:
     """
-    Present the user the three game difficulty options
+    Presents the user the three game difficulty options
     Get the choice from the user
     """
 
@@ -12,6 +12,13 @@ class DifficultySelection:
         self.game_main_loop()
 
     def game_main_loop(self):
+        """
+        Presets the three difficulty levels
+        to the player
+        It loops inifintly as long as the player
+        keep reseting the game
+        """
+
         while True:
             self.message = print(
                 "Please enter either 1 or 2 or 3 for the difficulty level:\n\

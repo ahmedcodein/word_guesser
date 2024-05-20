@@ -19,7 +19,7 @@ class InitiateGame(GameMixins):
 
     def welcome(self):
         """
-        Print out a welcome message
+       Diplays a welcome message
         """
         print(Fore.LIGHTGREEN_EX +
               """
