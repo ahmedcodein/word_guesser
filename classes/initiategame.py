@@ -15,14 +15,15 @@ class InitiateGame(GameMixins):
     """
 
     def __init__(self):
-        self.welcome()
+        self.general_welcome()
 
-    def welcome(self):
+    def general_welcome(self):
         """
        Diplays a welcome message
         """
-        print(Fore.LIGHTGREEN_EX +
-              """
+        self.clear_screen()
+        self.general_welcome = Fore.LIGHTCYAN_EX + """
+
             ██╗    ███████████╗     ██████╗██████╗███╗   ██████████╗
             ██║    ████╔════██║    ██╔════██╔═══██████╗ ██████╔════╝
             ██║ █╗ ███████╗ ██║    ██║    ██║   ████╔████╔███████╗
@@ -41,10 +42,9 @@ class InitiateGame(GameMixins):
             ██║   ████║   ████╔══╝ ╚════██╚════████╔══╝ ██╔══██╗
             ╚██████╔╚██████╔██████████████████████████████║  ██║
              ╚═════╝ ╚═════╝╚══════╚══════╚══════╚══════╚═╝  ╚═╝
-              """
-              )
+        """
+        print(self.general_welcome)
         pause()
-        self.clear_screen()
         self.intructions()
 
     def intructions(self):
@@ -52,29 +52,29 @@ class InitiateGame(GameMixins):
         Display the game rules and instructions
         then pause and wait for the user action to proceed
         """
-        instructions_rules = Fore.LIGHTGREEN_EX + """
+        self.clear_screen()
+        instructions_rules = Fore.LIGHTCYAN_EX + """
+
+                            GAME INSTRUCTIONS
         ########################################################
-        #                                                      #
-        #       - The job is to guess an English word          #
-        #         by entering its letters one by one.          #
-        #                                                      #
-        #        - You have three difficulty levels to         #
-        #          choose from:                                #
-        #                                                      #
-        #           # Easy for 3-letter words                  #
-        #           # Intermediate for 5-letter words          #
-        #           # Difficult for 6-letter words             #
-        #                                                      #
-        #        - Based on the difficulty level, you will     #
-        #          have:                                       #
-        #                                                      #
-        #           # 3 or 5 or 6 chances respectively.        #
-        #                                                      #
-        #                                                      #
-        #        Have fun!                                     #
-        ########################################################
+
+                - Your job is to guess an English word
+                  by entering its letters one by one.
+
+                - You have three difficulty levels to
+                  choose from:
+
+                    # Easy for 3-letter words
+                    # Intermediate for 5-letter words
+                    # Difficult for 6-letter words
+
+                - Based on the difficulty level, you will
+                  have:
+
+                    # 3 or 5 or 6 chances respectively.
+
+                Have fun!
         """
         print(instructions_rules)
         pause()
-        self.clear_screen()
         Player()
