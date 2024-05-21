@@ -159,35 +159,29 @@ class PlayerGuess(GameMixins):
                 game_msg = msg_value
         print(
             f"""
-            ###################################################
                             Game Dashboard
             ###################################################
-            ---------------------------------------------------
                              Game Setting
-            ---------------------------------------------------
-
+            
             Player Name       : {self.name.capitalize()}
             Difficulty Level  : {self.dif_value.capitalize()}
             Chances           : {self.word_len}
             ---------------------------------------------------
                               Game Satus
-            ---------------------------------------------------
-
+            
             Correct Guesses   : {self.correct_lett}
             Worng Guesses     : {self.wrong_lett}
             Current chances   : {self.word_len-len(self.wrong_lett)}
-
             ----------------------------------------------------
-                              Game Messages
-            ----------------------------------------------------
+                             Game Messages
+            
             {game_msg}
-            ####################################################
             """
         )
 
     def game_over(self, reset_signal):
         """
-        It is used to signal a reset 
+        It is used to signal a reset
         is needed
         """
         if reset_signal:
