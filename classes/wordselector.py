@@ -8,8 +8,10 @@ class WordSelector:
      and randomly select a word for the user to guess accordingly
     """
 
-    def __init__(self, difficulty_level, word_bank):
-        self.difficulty_level = difficulty_level
+    def __init__(self, name, difficulty_key, difficulty_value, word_bank):
+        self.name = name
+        self.difficulty_key = difficulty_key
+        self.difficulty_value = difficulty_value
         self.word_bank = word_bank
         self.counter = len(word_bank)
         self.difficulty_mapper()
@@ -22,9 +24,9 @@ class WordSelector:
         with specified length
         """
 
-        if self.difficulty_level == 1:
+        if self.difficulty_value == 1:
             self.word_length = 3
-        elif self.difficulty_level == 2:
+        elif self.difficulty_value == 2:
             self.word_length = 5
         else:
             self.word_length = 6

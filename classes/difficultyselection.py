@@ -54,7 +54,7 @@ class DifficultySelection(GameMixins):
                             f"\nYou chose '{key.capitalize()}' "
                             "as the difficulty level!"
                         )
-                        WordSelector(value, self.words_bank())
+                        WordSelector(self.name, key, value, self.words_bank())
                         loop = False
                         return loop
                     elif (
