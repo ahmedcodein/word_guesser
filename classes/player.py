@@ -36,4 +36,4 @@ class Player:
         self.welcome = print(
             f"\nWelcome {self.name.capitalize()}!\n"
             )
-        DifficultySelection()
+        DifficultySelection(self.name)

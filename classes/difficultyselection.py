@@ -8,7 +8,8 @@ class DifficultySelection(GameMixins):
     Get the choice from the user
     """
 
-    def __init__(self):
+    def __init__(self, name):
+        self.name = name
         self.game_main_loop()
 
     def game_main_loop(self):
