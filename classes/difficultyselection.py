@@ -21,6 +21,7 @@ class DifficultySelection(GameMixins):
         """
 
         while True:
+            self.clear_screen()
             self.message = print(
                 "Please enter either 1 or 2 or 3 for the difficulty level:\n\
                 1. Easy\n\
