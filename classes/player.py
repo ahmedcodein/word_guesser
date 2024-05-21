@@ -9,31 +9,31 @@ class Player:
     """
 
     def __init__(self):
-        self.first_name()
-        self.welcome_the_player()
+        self.name()
+        self.welcome()
 
-    def first_name(self):
+    def name(self):
         """
         The method for input the first name
         and for checking the name validity
         """
         while True:
             try:
-                self.first_name = (
+                self.name = (
                     input("Please enter your first name:\n ").lower().strip("")
                 )
-                if len(self.first_name) > 10:
+                if len(self.name) > 10:
                     print("\nPlease enter a name with less than 11 letters\n")
                 else:
                     break
             except KeyboardInterrupt:
                 print("\nCtrl C is not allowed!")
 
-    def welcome_the_player(self):
+    def welcome(self):
         """
         Print out the welcome message with the first name
         """
-        self.welcome_the_player = print(
-            f"\nWelcome {self.first_name.capitalize()}!\n"
+        self.welcome = print(
+            f"\nWelcome {self.name.capitalize()}!\n"
             )
         DifficultySelection()
