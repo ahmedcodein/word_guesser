@@ -15,7 +15,17 @@ class PlayerGuess(GameMixins):
         self.correct_lett = ["_"] * word_len
         self.wrong_lett = []
         self.count = 0
+        self.duplication_msg = None
+        self.correct_msg = None
+        self.wrong_msg = None
+        self.value_err_msg = None
+        self.ctrl_c_msg = None
+        self.won_msg = None
+        self.lost_msg = None
+        self.ctrl_d_msg = None
         self.reset_signal = False
+        self.clear_screen()
+        self.game_dashboard()
         self.get_player_guess()
 
     def get_player_guess(self):
@@ -26,6 +36,14 @@ class PlayerGuess(GameMixins):
         to evaluate the guessed letters method
         """
         while True:
+            self.duplication_msg = None
+            self.correct_msg = None
+            self.wrong_msg = None
+            self.won_msg = None
+            self.lost_msg = None
+            self.value_err_msg = None
+            self.ctrl_c_msg = None
+            self.ctrl_d_msg = None
             if self.game_over(self.reset_signal):
                 break
             try:
@@ -35,20 +53,14 @@ class PlayerGuess(GameMixins):
                 if (self.guessed_lett.isalpha()
                    and len(self.guessed_lett)) == 1:
                     self.evaluate_guessed_letters()
-                elif (
-                    len(self.guessed_lett) > 1
-                    and self.guessed_lett.isalpha() is True
-                ):
-                    print("\nPlease don't enter more than one letter.\n")
                 else:
                     raise ValueError
             except ValueError:
-                print("\nPlease Enter only ONE LETTER.")
-                print("- No Special characters.")
-                print("- No spaces.")
-                print("- No numbers\n")
+                self.value_err_msg = "Please enter ONLY ONE and Valid LETTER."
             except KeyboardInterrupt:
-                print("\nCtrl C is not allowed!")
+                self.ctrl_c_msg = "Ctrl C is not allowed!"
+            self.clear_screen()
+            self.game_dashboard()
 
     def evaluate_guessed_letters(self):
         """
@@ -72,10 +84,10 @@ class PlayerGuess(GameMixins):
         """
 
         if self.guessed_lett in self.wrong_lett:
-            print("You have already chosen this letter")
+            self.duplication_msg = "You have already chosen this letter"
         else:
             self.wrong_lett.append(self.guessed_lett)
-            print(f"Wrong Guesses: {self.wrong_lett}")
+            self.wrong_msg = "You have chosen the worng letter"
         self.game_status()
 
     def letter_is_correct(self):
@@ -87,17 +99,13 @@ class PlayerGuess(GameMixins):
         """
 
         if self.guessed_lett in self.correct_lett:
-            print("You have already chosen this letter")
+            self.duplication_msg = "You have already chosen this letter"
         else:
             for index, letter in enumerate(self.word):
                 if self.guessed_lett == letter:
                     self.count += 1
                     self.correct_lett[index] = letter
-            print(
-                "Correct Guesses: "
-                +
-                "".join(self.correct_lett).upper()
-                )
+            self.correct_msg = "You have chosen the correct letter"
         self.game_status()
 
     def game_status(self):
@@ -108,24 +116,74 @@ class PlayerGuess(GameMixins):
         """
 
         if len(self.wrong_lett) == self.word_len:
-            print(
-                f"\nAuch, you had {self.word_len} worng attempts. "
-                "\nThe correct word is "
-                f"{''.join(self.word).capitalize()}. "
-                "\nYou lost this time.\n"
-            )
+            self.lost_msg = f"""
+            You lost! The word is {''.join(self.word).capitalize()}
+            """
+            self.clear_screen()
+            self.game_dashboard()
             self.reset_game()
             self.reset_signal = True
             self.game_over(self.reset_signal)
         elif self.count == self.word_len:
-            print(
-                "\nGreat Job, you guessed the word!"
-                "\nThe correct word is "
-                f"{''.join(self.word).capitalize()}."
-            )
+            self.won_msg = f"""
+            Great Job! The word is {''.join(self.word).capitalize()}
+            """
+            self.clear_screen()
+            self.game_dashboard()
             self.reset_game()
             self.reset_signal = True
             self.game_over(self.reset_signal)
+        else:
+            self.clear_screen()
+            self.game_dashboard()
+
+    def game_dashboard(self):
+        """
+        The method is used to display
+        the game setup, status and error
+        messges
+        """
+
+        self.dashboard_msg = {
+            "Correct Letter": self.correct_msg,
+            "Wrong Letter": self.wrong_msg,
+            "Letter Duplication": self.duplication_msg,
+            "Game is won": self.won_msg,
+            "Game is lost": self.lost_msg,
+            "Value Error": self.value_err_msg,
+            "Ctrl C Key": self.ctrl_c_msg
+        }
+        game_msg = ""
+        for msg_key, msg_value in self.dashboard_msg.items():
+            if msg_value is not None:
+                game_msg = msg_value
+        print(
+            f"""
+            ###################################################
+                            Game Dashboard
+            ###################################################
+            ---------------------------------------------------
+                             Game Setting
+            ---------------------------------------------------
+
+            Player Name       : {self.name.capitalize()}
+            Difficulty Level  : {self.dif_value.capitalize()}
+            Chances           : {self.word_len}
+            ---------------------------------------------------
+                              Game Satus
+            ---------------------------------------------------
+
+            Correct Guesses   : {self.correct_lett}
+            Worng Guesses     : {self.wrong_lett}
+            Current chances   : {self.word_len-len(self.wrong_lett)}
+
+            ----------------------------------------------------
+                              Game Messages
+            ----------------------------------------------------
+            {game_msg}
+            ####################################################
+            """
+        )
 
     def game_over(self, reset_signal):
         """
