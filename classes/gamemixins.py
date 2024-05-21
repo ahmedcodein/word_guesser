@@ -177,32 +177,31 @@ class GameMixins:
             "yonder",
         ]
 
-
     def reset_game(self):
         """
         This method resets or exits the game
         upon the player request
         """
+        self.msgs = {
+            "Restart Message": "Restart the game? yes/no?",
+            "Value Error": None,
+            "Ctrl C Key": None,
+            "Ctrl D Key": None,
+        }
         print(
-            "\nWould you like to reset the game? "
-            "\nPlease type either yes or no: "
-            )
-        loop = True
+            f"""
+            ---------------------------------------------------
+            {self.msgs["Restart Message"]}
+            ---------------------------------------------------
+            """
+        )
         while True:
-            if not loop:
-                break
+            for msg_key, msg_value in self.msgs.items():
+                msg_value = None
             try:
                 player_input = input().lower().strip("")
                 if player_input == "yes" or player_input == "y":
-                    self.clear_screen()
-                    time.sleep(1)
-                    print("The Game is reseting ... ")
-                    time.sleep(1)
-                    print("The Game is reset!")
-                    pause()
-                    self.clear_screen()
-                    loop = False
-                    return loop
+                    break
                 elif player_input == "no" or player_input == "n":
                     self.clear_screen()
                     print(
@@ -225,16 +224,29 @@ class GameMixins:
                 else:
                     raise ValueError
             except ValueError:
-                print(
-                    "\nNot a valid input!\n"
-                    "Please type: "
-                    "'yes' for reset "
-                    ", 'no' for leaving the game."
+                self.msgs["Value Error"] = (
+                    """
+                    Not a valid input! Please type:
+                    'yes' for reseting the game.
+                    'No' for leaving the game.
+                    """
                 )
             except KeyboardInterrupt:
-                print(
-                    "\nCtrl C is not allowed!\n"
-                    "Please type: "
-                    "'yes' for reset "
-                    ", 'no' for leaving the game."
+                self.msgs["Ctrl C Key"] = (
+                    """
+                    Ctrl C is not allowed! Please type:
+                    'Yes' for reseting the game.
+                    'No' for leaving the game.
+                    """
                 )
+
+            for msg_key, msg_value in self.msgs.items():
+                if msg_value is not None:
+                    self.clear_screen()
+                    print(
+                        f"""
+            ---------------------------------------------------
+            {msg_value}
+            ---------------------------------------------------
+                    """
+                    )
