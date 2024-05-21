@@ -7,7 +7,9 @@ class PlayerGuess(GameMixins):
     and then processes the inputs
     """
 
-    def __init__(self, word_length, word_container):
+    def __init__(self, name, difficulty_value, word_length, word_container):
+        self.name = name
+        self.difficulty_value = difficulty_value
         self.word_container = word_container
         self.word_length = word_length
         self.correct_letters_container = ["_"] * word_length
