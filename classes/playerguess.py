@@ -7,13 +7,13 @@ class PlayerGuess(GameMixins):
     and then processes the inputs
     """
 
-    def __init__(self, name, difficulty_value, word_length, word_container):
+    def __init__(self, name, dif_value, word_len, word):
         self.name = name
-        self.difficulty_value = difficulty_value
-        self.word_container = word_container
-        self.word_length = word_length
-        self.correct_letters_container = ["_"] * word_length
-        self.wrong_letters_container = []
+        self.dif_value = dif_value
+        self.word = word
+        self.word_len = word_len
+        self.correct_lett = ["_"] * word_len
+        self.wrong_lett = []
         self.count = 0
         self.reset_signal = False
         self.get_player_guess()
@@ -29,15 +29,15 @@ class PlayerGuess(GameMixins):
             if self.game_over(self.reset_signal):
                 break
             try:
-                self.letter_guessed = input(
+                self.guessed_lett = input(
                     "Please enter a letter:\n "
                     )
-                if (self.letter_guessed.isalpha()
-                   and len(self.letter_guessed)) == 1:
+                if (self.guessed_lett.isalpha()
+                   and len(self.guessed_lett)) == 1:
                     self.evaluate_guessed_letters()
                 elif (
-                    len(self.letter_guessed) > 1
-                    and self.letter_guessed.isalpha() is True
+                    len(self.guessed_lett) > 1
+                    and self.guessed_lett.isalpha() is True
                 ):
                     print("\nPlease don't enter more than one letter.\n")
                 else:
@@ -58,7 +58,7 @@ class PlayerGuess(GameMixins):
         on the guess correctness
         """
 
-        if self.letter_guessed not in self.word_container:
+        if self.guessed_lett not in self.word:
             self.letter_is_wrong()
         else:
             self.letter_is_correct()
@@ -71,11 +71,11 @@ class PlayerGuess(GameMixins):
         to check if game lose occures
         """
 
-        if self.letter_guessed in self.wrong_letters_container:
+        if self.guessed_lett in self.wrong_lett:
             print("You have already chosen this letter")
         else:
-            self.wrong_letters_container.append(self.letter_guessed)
-            print(f"Wrong Guesses: {self.wrong_letters_container}")
+            self.wrong_lett.append(self.guessed_lett)
+            print(f"Wrong Guesses: {self.wrong_lett}")
         self.game_status()
 
     def letter_is_correct(self):
@@ -86,17 +86,17 @@ class PlayerGuess(GameMixins):
         to check if game win occurs
         """
 
-        if self.letter_guessed in self.correct_letters_container:
+        if self.guessed_lett in self.correct_lett:
             print("You have already chosen this letter")
         else:
-            for index, letter in enumerate(self.word_container):
-                if self.letter_guessed == letter:
+            for index, letter in enumerate(self.word):
+                if self.guessed_lett == letter:
                     self.count += 1
-                    self.correct_letters_container[index] = letter
+                    self.correct_lett[index] = letter
             print(
                 "Correct Guesses: "
                 +
-                "".join(self.correct_letters_container).upper()
+                "".join(self.correct_lett).upper()
                 )
         self.game_status()
 
@@ -107,21 +107,21 @@ class PlayerGuess(GameMixins):
         the final game status
         """
 
-        if len(self.wrong_letters_container) == self.word_length:
+        if len(self.wrong_lett) == self.word_len:
             print(
-                f"\nAuch, you had {self.word_length} worng attempts. "
+                f"\nAuch, you had {self.word_len} worng attempts. "
                 "\nThe correct word is "
-                f"{''.join(self.word_container).capitalize()}. "
+                f"{''.join(self.word).capitalize()}. "
                 "\nYou lost this time.\n"
             )
             self.reset_game()
             self.reset_signal = True
             self.game_over(self.reset_signal)
-        elif self.count == self.word_length:
+        elif self.count == self.word_len:
             print(
                 "\nGreat Job, you guessed the word!"
                 "\nThe correct word is "
-                f"{''.join(self.word_container).capitalize()}."
+                f"{''.join(self.word).capitalize()}."
             )
             self.reset_game()
             self.reset_signal = True
