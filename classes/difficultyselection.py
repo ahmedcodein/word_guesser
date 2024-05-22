@@ -1,4 +1,3 @@
-import colorama
 from classes.wordselector import WordSelector
 from classes.gamemixins import GameMixins
 from getch import pause
@@ -7,7 +6,7 @@ from colorama import Fore
 
 class DifficultySelection(GameMixins):
     """
-    This class presents the user 
+    This class presents the user
     the three game difficulty options.
     Then it gets the choice from the
     player
@@ -58,7 +57,7 @@ class DifficultySelection(GameMixins):
         It then handovers result to the WordSelector
         """
         while True:
-            for dif_key, dif_value in self.dif_level_msgs.items():
+            for dif_key in self.dif_level_msgs.keys():
                 self.dif_level_msgs[dif_key] = None
             try:
                 self.dif_level_choice = int(input())
@@ -92,10 +91,10 @@ class DifficultySelection(GameMixins):
 
     def display(self):
         """
-        It displays various messages to 
+        It displays various messages to
         the player based on player inputs
         """
-        for dif_key, dif_value in self.dif_level_msgs.items():
+        for dif_value in self.dif_level_msgs.values():
             if dif_value is not None:
                 print(
                     f"""
