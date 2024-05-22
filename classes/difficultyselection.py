@@ -70,6 +70,7 @@ class DifficultySelection(GameMixins):
                         pause()
                         WordSelector(self.name, dif_key, dif_value,
                                      self.words_bank())
+                        self.clear_screen()
                         loop = False
                         return loop
                     elif self.dif_level_choice not in self.dif_levels.values():
