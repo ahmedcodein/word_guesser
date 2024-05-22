@@ -226,29 +226,19 @@ class GameMixins:
                 else:
                     raise ValueError
             except ValueError:
-                self.msgs["Value Error"] = (
-                    f"""
-                    {Fore.RED}Not a valid input! {Fore.RESET}Please type:
-                    'yes' for reseting the game.
-                    'No' for leaving the game.
-                    """
-                )
+                self.msgs["Value Error"] = f"{Fore.RED}Not a valid input!"
             except KeyboardInterrupt:
-                self.msgs["Ctrl C Key"] = (
-                    f"""
-                    {Fore.RED}Ctrl C is not allowed! {Fore.RESET}Please type:
-                    'Yes' for reseting the game.
-                    'No' for leaving the game.
-                    """
-                )
-
+                self.msgs["Ctrl C Key"] = f"{Fore.RED}Ctrl C is not allowed!"
             for msg_key, msg_value in self.msgs.items():
                 if msg_value is not None:
                     self.clear_screen()
                     print(
                         f"""
             ---------------------------------------------------
-            {msg_value}
+            {msg_value}{Fore.RESET}
+            Please type:
+            - 'Yes' for reseting the game.
+            - 'No' for leaving the game.
             ---------------------------------------------------
                     """
                     )
