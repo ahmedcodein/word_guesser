@@ -1,5 +1,6 @@
 from classes.wordselector import WordSelector
 from classes.gamemixins import GameMixins
+from getch import pause
 
 
 class DifficultySelection(GameMixins):
@@ -9,6 +10,13 @@ class DifficultySelection(GameMixins):
     """
 
     def __init__(self, name):
+        self.dif_level_msgs = {
+            "Difficulty Levels": None,
+            "Player Choice": None,
+            "Value Error": None,
+            "Ctrl C key": None,
+            "Ctrl D key": None
+        }
         self.name = name
         self.game_main_loop()
 
@@ -21,21 +29,23 @@ class DifficultySelection(GameMixins):
         """
 
         while True:
-            self.clear_screen()
-            self.message = print(
-                "Please enter either 1 or 2 or 3 for the difficulty level:\n\
-                1. Easy\n\
-                2. Intermediate\n\
-                3. Difficult\n"
-            )
-            self.difficulty_level = {
-                "easy": 1,
-                "intermediate": 2,
-                "difficult": 3
-                }
-            self.get_difficulty_level()
 
-    def get_difficulty_level(self):
+            self.dif_levels = {"easy": 1, "intermediate": 2, "difficult": 3}
+            self.dif_level_msgs[
+                "Difficulty Levels"
+            ] = f"""
+            ---------------------------------------------------
+            Please type either 1, 2 or 3 for the
+            difficulty level:
+                1. Easy
+                2. Intermediate
+                3. Difficult
+            ---------------------------------------------------
+            """
+            print(self.dif_level_msgs["Difficulty Levels"])
+            self.get_dif_level()
+
+    def get_dif_level(self):
         """
         Allow the user to input the difficulty choice
         Check if the user input is valid
@@ -44,29 +54,44 @@ class DifficultySelection(GameMixins):
         Go to the WordSelector
         """
         while True:
+            for dif_key, dif_value in self.dif_level_msgs.items():
+                self.dif_level_msgs[dif_key] = None
             try:
-                self.difficulty_level_choice = int(
-                    input("Please enter you choice here:\n")
-                )
+                self.dif_level_choice = int(input())
                 loop = True
-                for key, value in self.difficulty_level.items():
-                    if value == self.difficulty_level_choice and loop is True:
-                        print(
-                            f"\nYou chose '{key.capitalize()}' "
-                            "as the difficulty level!"
+                for dif_key, dif_value in self.dif_levels.items():
+                    if dif_value == self.dif_level_choice and loop is True:
+                        self.dif_level_msgs["Player Choice"] = (
+                            f"You chose the '{dif_key.capitalize()}' level!"
                         )
-                        WordSelector(self.name, key, value, self.words_bank())
+                        self.display()
+                        pause()
+                        WordSelector(self.name, dif_key, dif_value,
+                                     self.words_bank())
                         loop = False
                         return loop
-                    elif (
-                        self.difficulty_level_choice
-                        not in self.difficulty_level.values()
-                    ):
+                    elif self.dif_level_choice not in self.dif_levels.values():
                         raise ValueError
                     else:
                         continue
-
             except ValueError:
-                print("Invalid choice, please enter either 1,2 or 3:\n")
+                self.dif_level_msgs["Value Error"] = (
+                    "Invalid choice, Please type either 1, 2 or 3"
+                )
+                self.display()
             except KeyboardInterrupt:
-                print("\nCtrl C is not allowed!")
+                self.dif_level_msgs["Ctrl C key"] = (
+                    "Ctrl C is not allowed! Please type either 1, 2 or 3"
+                )
+                self.display()
+
+    def display(self):
+        for dif_key, dif_value in self.dif_level_msgs.items():
+            if dif_value is not None:
+                print(
+                    f"""
+            ---------------------------------------------------
+            {dif_value}
+            ---------------------------------------------------
+                    """
+                )
