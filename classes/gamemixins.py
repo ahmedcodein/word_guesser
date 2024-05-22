@@ -197,7 +197,7 @@ class GameMixins:
         )
         while True:
             for msg_key, msg_value in self.msgs.items():
-                msg_value = None
+                self.msgs[msg_key] = None
             try:
                 player_input = input().lower().strip("")
                 if player_input == "yes" or player_input == "y":
