@@ -7,8 +7,10 @@ colorama.init(autoreset=True)
 
 class PlayerGuess(GameMixins):
     """
-    This class gets player guesses
-    and then processes the inputs
+    This class represents the core
+    of the game.
+    from getting the player guess till
+    resetting or exiting the game
     """
 
     def __init__(self, name, dif_value, word_len, word):
@@ -39,7 +41,7 @@ class PlayerGuess(GameMixins):
         Gets the plyer guess
         then it checks for its validity
         then it handovers the guessed letter
-        to evaluate the guessed letters method
+        to evaluate-guessed-letters method
         """
         while True:
             for msg_key in self.game_msgs.keys():
@@ -65,7 +67,7 @@ class PlayerGuess(GameMixins):
     def evaluate_guessed_letters(self):
         """
         Evaluates the player guess
-        and it handovers the result to
+        then it handovers the result to
         the respective method based
         on the guess correctness
         """
@@ -79,8 +81,8 @@ class PlayerGuess(GameMixins):
         """
         Checks if the letter is already guessed
         if not, it adds it to wrong letters storage
-        then it hands over a counter
-        to check if game lose occures
+        then it hands over game status
+        to check if game lose occurs
         """
 
         if self.guessed_lett in self.wrong_lett:
@@ -90,13 +92,13 @@ class PlayerGuess(GameMixins):
         else:
             self.wrong_lett.append(self.guessed_lett)
             self.game_msgs["Wrong Letter"] = (
-                Fore.RED + "You have chosen the worng letter"
+                Fore.RED + "You have chosen the wrong letter"
             )
         self.game_status()
 
     def letter_is_correct(self):
         """
-        Checks if the letter is already guesssed
+        Checks if the letter is already guessed
         if not, it adds it to the correct letters storage
         then it hands over a counter
         to check if game win occurs
@@ -117,7 +119,7 @@ class PlayerGuess(GameMixins):
 
     def game_status(self):
         """
-        checks if win or lose occures
+        checks if win or lose occurs
         if so, it announces
         the final game status
         """
@@ -154,7 +156,7 @@ class PlayerGuess(GameMixins):
         """
         The method is used to display
         the game setup, status and error
-        messges
+        messages
         """
         real_time_chances = self.word_len - len(self.wrong_lett)
         dashboard_msg = ""
@@ -186,8 +188,8 @@ class PlayerGuess(GameMixins):
 
     def game_over(self, reset_signal):
         """
-        It is used to signal a reset
-        is needed
+        It is used to signal a game 
+        reset is needed
         """
         if reset_signal:
             return True
