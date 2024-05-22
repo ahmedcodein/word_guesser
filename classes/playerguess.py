@@ -1,6 +1,7 @@
 import colorama
 from classes.gamemixins import GameMixins
 from colorama import Fore
+
 colorama.init(autoreset=True)
 
 
@@ -18,14 +19,16 @@ class PlayerGuess(GameMixins):
         self.correct_lett = ["_"] * word_len
         self.wrong_lett = []
         self.count = 0
-        self.duplication_msg = None
-        self.correct_msg = None
-        self.wrong_msg = None
-        self.value_err_msg = None
-        self.ctrl_c_msg = None
-        self.won_msg = None
-        self.lost_msg = None
-        self.ctrl_d_msg = None
+        self.game_msgs = {
+            "Multiple Letters": None,
+            "Correct Letter": None,
+            "Wrong Letter": None,
+            "Lost Message": None,
+            "Won Message": None,
+            "Value Error": None,
+            "Ctrl C key": None,
+            "Ctrl D key": None,
+        }
         self.reset_signal = False
         self.clear_screen()
         self.game_dashboard()
@@ -39,20 +42,12 @@ class PlayerGuess(GameMixins):
         to evaluate the guessed letters method
         """
         while True:
-            self.duplication_msg = None
-            self.correct_msg = None
-            self.wrong_msg = None
-            self.won_msg = None
-            self.lost_msg = None
-            self.value_err_msg = None
-            self.ctrl_c_msg = None
-            self.ctrl_d_msg = None
+            for msg_key in self.game_msgs.keys():
+                self.game_msgs[msg_key] = None
             if self.game_over(self.reset_signal):
                 break
             try:
-                self.guessed_lett = input(
-                    "Please enter a letter:\n "
-                    )
+                self.guessed_lett = input("Please enter a letter:\n ")
                 if (self.guessed_lett.isalpha()
                    and len(self.guessed_lett)) == 1:
                     self.evaluate_guessed_letters()
@@ -60,10 +55,10 @@ class PlayerGuess(GameMixins):
                     raise ValueError
             except ValueError:
                 value_err_msg = "Please enter ONLY ONE and Valid LETTER."
-                self.value_err_msg = Fore.LIGHTRED_EX + value_err_msg
+                self.game_msgs["ValueError"] = Fore.LIGHTRED_EX + value_err_msg
             except KeyboardInterrupt:
                 ctrl_c_msg = "Ctrl C is not allowed!"
-                self.ctrl_c_msg = Fore.LIGHTRED_EX + ctrl_c_msg
+                self.game_msgs["Ctrl C key"] = Fore.LIGHTRED_EX + ctrl_c_msg
             self.clear_screen()
             self.game_dashboard()
 
@@ -90,10 +85,13 @@ class PlayerGuess(GameMixins):
 
         if self.guessed_lett in self.wrong_lett:
             duplication_msg = "You have already chosen this letter"
-            self.duplication_msg = Fore.LIGHTYELLOW_EX + duplication_msg
+            self.game_msgs["Multiple Letters"] = (Fore.LIGHTYELLOW_EX +
+                                                  duplication_msg)
         else:
             self.wrong_lett.append(self.guessed_lett)
-            self.wrong_msg = Fore.RED + "You have chosen the worng letter"
+            self.game_msgs["Wrong Letter"] = (
+                Fore.RED + "You have chosen the worng letter"
+            )
         self.game_status()
 
     def letter_is_correct(self):
@@ -106,14 +104,15 @@ class PlayerGuess(GameMixins):
 
         if self.guessed_lett in self.correct_lett:
             duplication_msg = "You have already chosen this letter"
-            self.duplication_msg = Fore.LIGHTYELLOW_EX + duplication_msg
+            self.game_msgs["Multiple Letters"] = (Fore.LIGHTYELLOW_EX +
+                                                  duplication_msg)
         else:
             for index, letter in enumerate(self.word):
                 if self.guessed_lett == letter:
                     self.count += 1
                     self.correct_lett[index] = letter
             correct_msg = "You have chosen the correct letter"
-            self.correct_msg = Fore.LIGHTGREEN_EX + correct_msg
+            self.game_msgs["Correct Letter"] = Fore.LIGHTGREEN_EX + correct_msg
         self.game_status()
 
     def game_status(self):
@@ -124,18 +123,24 @@ class PlayerGuess(GameMixins):
         """
 
         if len(self.wrong_lett) == self.word_len:
-            self.lost_msg = Fore.RED + f"""
+            self.game_msgs["Lost Message"] = (
+                Fore.RED
+                + f"""
             You lost! The word is {''.join(self.word).capitalize()}
             """
+            )
             self.clear_screen()
             self.game_dashboard()
             self.reset_game()
             self.reset_signal = True
             self.game_over(self.reset_signal)
         elif self.count == self.word_len:
-            self.won_msg = Fore.GREEN + f"""
+            self.game_msgs["Won Message"] = (
+                Fore.GREEN
+                + f"""
             Great Job! The word is {''.join(self.word).capitalize()}
             """
+            )
             self.clear_screen()
             self.game_dashboard()
             self.reset_game()
@@ -151,22 +156,14 @@ class PlayerGuess(GameMixins):
         the game setup, status and error
         messges
         """
-        real_time_chances = self.word_len-len(self.wrong_lett)
-        self.dashboard_msg = {
-            "Correct Letter": self.correct_msg,
-            "Wrong Letter": self.wrong_msg,
-            "Letter Duplication": self.duplication_msg,
-            "Game is won": self.won_msg,
-            "Game is lost": self.lost_msg,
-            "Value Error": self.value_err_msg,
-            "Ctrl C Key": self.ctrl_c_msg
-        }
-        game_msg = ""
-        for msg_key, msg_value in self.dashboard_msg.items():
+        real_time_chances = self.word_len - len(self.wrong_lett)
+        dashboard_msg = ""
+        for msg_value in self.game_msgs.values():
             if msg_value is not None:
-                game_msg = msg_value
+                dashboard_msg = msg_value
         print(
-            Fore.LIGHTCYAN_EX + f"""
+            Fore.LIGHTCYAN_EX
+            + f"""
                             Game Dashboard
             ###################################################
                              Game Setting
@@ -183,7 +180,7 @@ class PlayerGuess(GameMixins):
             {Fore.LIGHTCYAN_EX}----------------------------------------------------
                              Game Messages
 
-            {game_msg}
+            {dashboard_msg}
             """
         )
 
