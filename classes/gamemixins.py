@@ -24,6 +24,10 @@ class GameMixins:
 
     @staticmethod
     def words_bank():
+        """
+        This method contains a list
+        of all the game words
+        """
         return [
             "cat",
             "dog",
