@@ -1,5 +1,7 @@
 import os
 import time
+import colorama
+from colorama import Fore
 from getch import pause
 
 
@@ -225,16 +227,16 @@ class GameMixins:
                     raise ValueError
             except ValueError:
                 self.msgs["Value Error"] = (
-                    """
-                    Not a valid input! Please type:
+                    f"""
+                    {Fore.RED}Not a valid input! {Fore.RESET}Please type:
                     'yes' for reseting the game.
                     'No' for leaving the game.
                     """
                 )
             except KeyboardInterrupt:
                 self.msgs["Ctrl C Key"] = (
-                    """
-                    Ctrl C is not allowed! Please type:
+                    f"""
+                    {Fore.RED}Ctrl C is not allowed! {Fore.RESET}Please type:
                     'Yes' for reseting the game.
                     'No' for leaving the game.
                     """
