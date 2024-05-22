@@ -7,8 +7,10 @@ from colorama import Fore
 
 class DifficultySelection(GameMixins):
     """
-    Presents the user the three game difficulty options
-    Get the choice from the user
+    This class presents the user 
+    the three game difficulty options.
+    Then it gets the choice from the
+    player
     """
 
     def __init__(self, name):
@@ -25,9 +27,9 @@ class DifficultySelection(GameMixins):
     def game_main_loop(self):
         """
         Presets the three difficulty levels
-        to the player
-        It loops inifintly as long as the player
-        keep reseting the game
+        to the player.
+        It loops indefinitely as long as
+        the player keep resetting the game
         """
         while True:
 
@@ -48,11 +50,12 @@ class DifficultySelection(GameMixins):
 
     def get_dif_level(self):
         """
-        Allow the user to input the difficulty choice
-        Check if the user input is valid
-        If input is not valid, raise the error to the user
-        If the input is valid, display the user choice
-        Go to the WordSelector
+        Allows the user to input the difficulty
+        choice. It checks if the user input is valid
+        If input is not valid, it raises error
+        If the input is valid, it displays the player
+        choice.
+        It then handovers result to the WordSelector
         """
         while True:
             for dif_key, dif_value in self.dif_level_msgs.items():
@@ -88,6 +91,10 @@ class DifficultySelection(GameMixins):
                 self.display()
 
     def display(self):
+        """
+        It displays various messages to 
+        the player based on player inputs
+        """
         for dif_key, dif_value in self.dif_level_msgs.items():
             if dif_value is not None:
                 print(
