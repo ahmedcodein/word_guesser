@@ -41,11 +41,17 @@ class Player(GameMixins):
             try:
                 self.name = input().lower().strip("")
                 if len(self.name) > 10:
-                    self.name_err_msg["Long Name"] = "Please no more than 10 letters."
+                    self.name_err_msg["Long Name"] = """
+                    Please no more than 10 letters.
+                    """
                 elif any(i.isspace() for i in self.name):
-                    self.name_err_msg["Spaces"] = "Please no empty name or spaces."
+                    self.name_err_msg["Spaces"] = """
+                    Please no empty name or spaces.
+                    """
                 elif any(i.isdigit() for i in self.name):
-                    self.name_err_msg["Numbers"] = "Please only letters, no numbers."
+                    self.name_err_msg["Numbers"] = """
+                    Please only letters, no numbers.
+                    """
                 elif not any(i.isalpha() for i in self.name):
                     self.name_err_msg["Non-alphabetic"] = (
                         "Please only alphabetic letters."
