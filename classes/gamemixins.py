@@ -7,8 +7,8 @@ from getch import pause
 
 class GameMixins:
     """
-    This class contains all mixins
-    methods that can be used by other
+    This class contains all the game
+    mixin methods used by other
     classes
     """
 
@@ -237,7 +237,7 @@ class GameMixins:
             ---------------------------------------------------
             {msg_value}{Fore.RESET}
             Please type:
-            - 'Yes' for reseting the game.
+            - 'Yes' for resetting the game.
             - 'No' for leaving the game.
             ---------------------------------------------------
                     """
