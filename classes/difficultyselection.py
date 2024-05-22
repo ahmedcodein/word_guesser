@@ -1,6 +1,8 @@
+import colorama
 from classes.wordselector import WordSelector
 from classes.gamemixins import GameMixins
 from getch import pause
+from colorama import Fore
 
 
 class DifficultySelection(GameMixins):
@@ -76,12 +78,12 @@ class DifficultySelection(GameMixins):
                         continue
             except ValueError:
                 self.dif_level_msgs["Value Error"] = (
-                    "Invalid choice, Please type either 1, 2 or 3"
+                    Fore.RED + "Invalid choice, Please type 1 or 2 or 3"
                 )
                 self.display()
             except KeyboardInterrupt:
                 self.dif_level_msgs["Ctrl C key"] = (
-                    "Ctrl C is not allowed! Please type either 1, 2 or 3"
+                    Fore.RED + "Ctrl C is not allowed! Please type 1 or 2 or 3"
                 )
                 self.display()
 
@@ -91,7 +93,7 @@ class DifficultySelection(GameMixins):
                 print(
                     f"""
             ---------------------------------------------------
-            {dif_value}
+            {dif_value}{Fore.RESET}
             ---------------------------------------------------
                     """
                 )
