@@ -1,8 +1,5 @@
 import os
-import time
-import colorama
 from colorama import Fore
-from getch import pause
 
 
 class GameMixins:
@@ -11,8 +8,8 @@ class GameMixins:
     mixin methods used by other
     classes
     """
-
-    def clear_screen(self):
+    @staticmethod
+    def clear_screen():
         """
         The method clears the game screen
         """
@@ -25,7 +22,8 @@ class GameMixins:
             command = "cls"
         os.system(command)
 
-    def words_bank(self):
+    @staticmethod
+    def words_bank():
         return [
             "cat",
             "dog",
@@ -198,7 +196,7 @@ class GameMixins:
             """
         )
         while True:
-            for msg_key, msg_value in self.msgs.items():
+            for msg_key in self.msgs.keys():
                 self.msgs[msg_key] = None
             try:
                 player_input = input().lower().strip("")
@@ -229,7 +227,7 @@ class GameMixins:
                 self.msgs["Value Error"] = f"{Fore.RED}Not a valid input!"
             except KeyboardInterrupt:
                 self.msgs["Ctrl C Key"] = f"{Fore.RED}Ctrl C is not allowed!"
-            for msg_key, msg_value in self.msgs.items():
+            for msg_value in self.msgs.values():
                 if msg_value is not None:
                     self.clear_screen()
                     print(
