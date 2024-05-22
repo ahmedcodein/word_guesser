@@ -29,7 +29,7 @@ class DifficultySelection(GameMixins):
         It loops inifintly as long as the player
         keep reseting the game
         """
-
+        self.clear_screen()
         while True:
 
             self.dif_levels = {"easy": 1, "intermediate": 2, "difficult": 3}
