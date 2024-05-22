@@ -77,4 +77,5 @@ class InitiateGame(GameMixins):
         """
         print(instructions_rules)
         pause()
+        self.clear_screen()
         Player()
