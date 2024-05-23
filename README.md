@@ -1,6 +1,15 @@
 # Word Guesser
 
 ## 1. Introduction
+The word guesser game is a game revolves around figuring out what word the computer is picked.
+The player then try to guess the word letter by letter. The player wins if all the guessed letters
+are correct given a limited number of tries/chances.
+The number of chances is defined as how many wrong letters are entered by the player.
+The player has three type of chances based on the difficulty choice. The difficulty choices are:
+
+- Easy with three chances. There the picked word is a three-letter word
+- Intermediate with five chances. There, the picked word is a five-letter word
+- Difficult with six chances. There, the picked word is a six-letter word
 
 ## 2. Development Process
 
