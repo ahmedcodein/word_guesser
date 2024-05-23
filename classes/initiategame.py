@@ -19,7 +19,6 @@ class InitiateGame(GameMixins):
         """
        Displays a welcome message
         """
-        self.clear_screen()
         self.general_welcome = Fore.LIGHTCYAN_EX + """
 
             ██╗    ███████████╗     ██████╗██████╗███╗   ██████████╗
