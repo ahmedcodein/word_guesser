@@ -1,10 +1,7 @@
-import colorama
-import os
 from getch import pause
 from colorama import Fore
 from classes.player import Player
 from classes.gamemixins import GameMixins
-colorama.init(autoreset=True)
 
 
 class InitiateGame(GameMixins):
@@ -45,9 +42,9 @@ class InitiateGame(GameMixins):
         """
         print(self.general_welcome)
         pause()
-        self.intructions()
+        self.instructions()
 
-    def intructions(self):
+    def instructions(self):
         """
         Display the game rules and instructions
         then pause and wait for the user action to proceed
