@@ -8,9 +8,9 @@ colorama.init(autoreset=True)
 class PlayerGuess(GameMixins):
     """
     This class represents the core
-    of the game.
-    from getting the player guess till
-    resetting or exiting the game
+    of the game from getting the
+    player guess till resetting or
+    exiting the game
     """
 
     def __init__(self, name, dif_value, word_len, word):
@@ -188,7 +188,7 @@ class PlayerGuess(GameMixins):
 
     def game_over(self, reset_signal):
         """
-        It is used to signal a game 
+        It is used to signal a game
         reset is needed
         """
         if reset_signal:
