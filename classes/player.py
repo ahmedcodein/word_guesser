@@ -1,9 +1,6 @@
-import colorama
 from classes.difficultyselection import DifficultySelection
 from classes.gamemixins import GameMixins
 from colorama import Fore
-
-colorama.init(autoreset=True)
 
 
 class Player(GameMixins):
@@ -29,33 +26,31 @@ class Player(GameMixins):
             "Ctrl C Key": None,
             "Ctrl D Key": None,
         }
-        self.name_msg = f"""
+        self.name_msg = "Please enter your first name:"
+        print(
+            f"""
             ---------------------------------------------------
-            Please enter your first name:
+            {self.name_msg}
             ---------------------------------------------------
             """
-        print(self.name_msg)
+        )
         while True:
-            for name_err_key, name_err_value in self.name_err_msg.items():
+            for name_err_key in self.name_err_msg.keys():
                 self.name_err_msg[name_err_key] = None
             try:
                 self.name = input().lower().strip("")
                 if len(self.name) > 10:
-                    self.name_err_msg["Long Name"] = """
-                    Please no more than 10 letters.
-                    """
+                    self.name_err_msg["Long Name"] = (
+                        "Please no more than 10 letters.")
                 elif any(i.isspace() for i in self.name):
-                    self.name_err_msg["Spaces"] = """
-                    Please no empty name or spaces.
-                    """
+                    self.name_err_msg["Spaces"] = (
+                        "Please no empty name or spaces.")
                 elif any(i.isdigit() for i in self.name):
-                    self.name_err_msg["Numbers"] = """
-                    Please only letters, no numbers.
-                    """
+                    self.name_err_msg["Numbers"] = (
+                        "Please only letters, no numbers.")
                 elif not any(i.isalpha() for i in self.name):
                     self.name_err_msg["Non-alphabetic"] = (
-                        "Please only alphabetic letters."
-                    )
+                        "Please only alphabetic letters.")
                 else:
                     self.welcome()
                     break
@@ -64,14 +59,14 @@ class Player(GameMixins):
             self.display()
 
     def display(self):
-        for name_err_key, name_err_value in self.name_err_msg.items():
+        for name_err_value in self.name_err_msg.values():
             if name_err_value is not None:
                 self.clear_screen()
                 print(
                     f"""
             ---------------------------------------------------
             {Fore.RED}{name_err_value}
-            {Fore.RESET}Please enter your first name again here:
+            {Fore.RESET}{self.name_msg}
             ---------------------------------------------------
                     """
                 )
