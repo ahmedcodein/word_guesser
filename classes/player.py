@@ -56,6 +56,8 @@ class Player(GameMixins):
                     break
             except KeyboardInterrupt:
                 self.name_err_msg["Ctrl C Key"] = "Ctrl C is not allowed!."
+            except EOFError:
+                self.name_err_msg["Ctrl D Key"] = "Ctrl D is not allowed!."
             self.display()
 
     def display(self):

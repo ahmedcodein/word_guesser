@@ -61,6 +61,9 @@ class PlayerGuess(GameMixins):
             except KeyboardInterrupt:
                 ctrl_c_msg = "Ctrl C is not allowed!"
                 self.game_msgs["Ctrl C key"] = Fore.LIGHTRED_EX + ctrl_c_msg
+            except EOFError:
+                ctrl_d_msg = "Ctrl D is not allowed!"
+                self.game_msgs["Ctrl D key"] = Fore.LIGHTRED_EX + ctrl_d_msg
             self.clear_screen()
             self.game_dashboard()
 

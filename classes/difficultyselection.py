@@ -90,6 +90,12 @@ class DifficultySelection(GameMixins):
                     + Fore.RESET + "Please type 1 or 2 or 3:"
                 )
                 self.display()
+            except EOFError:
+                self.dif_level_msgs["Ctrl D key"] = (
+                    Fore.RED + "Ctrl D is not allowed! "
+                    + Fore.RESET + "Please type 1 or 2 or 3:"
+                )
+                self.display()
 
     def display(self):
         """

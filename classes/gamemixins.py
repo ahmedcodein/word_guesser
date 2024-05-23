@@ -231,6 +231,8 @@ class GameMixins:
                 self.msgs["Value Error"] = f"{Fore.RED}Not a valid input!"
             except KeyboardInterrupt:
                 self.msgs["Ctrl C Key"] = f"{Fore.RED}Ctrl C is not allowed!"
+            except EOFError:
+                self.msgs["Ctrl D Key"] = f"{Fore.RED}Ctrl D is not allowed!"
             for msg_value in self.msgs.values():
                 if msg_value is not None:
                     self.clear_screen()
