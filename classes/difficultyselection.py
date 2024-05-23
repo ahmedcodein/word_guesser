@@ -35,7 +35,7 @@ class DifficultySelection(GameMixins):
             self.dif_levels = {"easy": 1, "intermediate": 2, "difficult": 3}
             self.dif_level_msgs[
                 "Difficulty Levels"
-            ] = f"""
+            ] = """
             ---------------------------------------------------
             Please type either 1, 2 or 3 for the
             difficulty level:
