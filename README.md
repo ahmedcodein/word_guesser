@@ -25,6 +25,15 @@ These phases are presented below with a detailed account of each phase is presen
 
 ### 2.1. Research and Selection Criteria
 
+The research phase commences with a survey on Portfolio Project 3 (PP3) works published by Code Institute(CI) students on the pear-review channel.
+There is a wealth of information there where the author is able to extract and learn from. Additionally, other searches are also
+conducted on YouTube and relevant websites.
+A summary of the reasons of choosing this game is:
+
+1. Satisfactory amount of resources is available to extract information about the game. Whether under the word guesser name, or Hangman etc..., the game seems to be very popular among python developers. This makes it a good candidate since it is relatively easy to find information about how to approach the development. 
+2. Although, it is limited in its scope, its code can cover multiple python concepts. Hence, it represents a low-risk sand-box to learn those concepts in considering the available time for PP3.
+
+
 ### 2.2. Project Objective
 
 #### 2.2.1. Website Owner Objectives
