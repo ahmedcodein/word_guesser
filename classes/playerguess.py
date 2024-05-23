@@ -174,10 +174,10 @@ class PlayerGuess(GameMixins):
             Difficulty Level    : {self.dif_value.capitalize()}
             Chances             : {self.word_len}
             ---------------------------------------------------
-                              Game Satus
+                              Game Status
 
             {Fore.GREEN}Correct Guesses     : {self.correct_lett}
-            {Fore.RED}Worng Guesses       : {self.wrong_lett}
+            {Fore.RED}Wrong Guesses       : {self.wrong_lett}
             {Fore.BLUE}Current chances     : {real_time_chances}
             {Fore.LIGHTCYAN_EX}----------------------------------------------------
                              Game Messages
