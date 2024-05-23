@@ -35,5 +35,4 @@ class WordSelector:
             self.counter -= 1
             if len(self.word) == self.word_len:
                 break
-        print(f"You have {self.word_len} chances before you lose!\n")
         PlayerGuess(self.name, self.dif_key, self.word_len, list(self.word))
