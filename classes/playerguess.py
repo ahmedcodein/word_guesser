@@ -56,14 +56,15 @@ class PlayerGuess(GameMixins):
                 else:
                     raise ValueError
             except ValueError:
-                value_err_msg = "Please enter ONLY ONE and Valid LETTER."
-                self.game_msgs["ValueError"] = Fore.LIGHTRED_EX + value_err_msg
+                self.game_msgs["ValueError"] = (
+                    Fore.LIGHTRED_EX +
+                    "Please enter ONLY ONE and Valid LETTER.")
             except KeyboardInterrupt:
-                ctrl_c_msg = "Ctrl C is not allowed!"
-                self.game_msgs["Ctrl C key"] = Fore.LIGHTRED_EX + ctrl_c_msg
+                self.game_msgs["Ctrl C key"] = (
+                    Fore.LIGHTRED_EX + "Ctrl C is not allowed!")
             except EOFError:
-                ctrl_d_msg = "Ctrl D is not allowed!"
-                self.game_msgs["Ctrl D key"] = Fore.LIGHTRED_EX + ctrl_d_msg
+                self.game_msgs["Ctrl D key"] = (
+                    Fore.LIGHTRED_EX + "Ctrl D is not allowed!")
             self.clear_screen()
             self.game_dashboard()
 
@@ -89,9 +90,8 @@ class PlayerGuess(GameMixins):
         """
 
         if self.guessed_lett in self.wrong_lett:
-            duplication_msg = "You have already chosen this letter"
-            self.game_msgs["Multiple Letters"] = (Fore.LIGHTYELLOW_EX +
-                                                  duplication_msg)
+            self.game_msgs["Multiple Letters"] = (
+                Fore.LIGHTYELLOW_EX + "You have already chosen this letter")
         else:
             self.wrong_lett.append(self.guessed_lett)
             self.game_msgs["Wrong Letter"] = (
@@ -108,16 +108,15 @@ class PlayerGuess(GameMixins):
         """
 
         if self.guessed_lett in self.correct_lett:
-            duplication_msg = "You have already chosen this letter"
-            self.game_msgs["Multiple Letters"] = (Fore.LIGHTYELLOW_EX +
-                                                  duplication_msg)
+            self.game_msgs["Multiple Letters"] = (
+                Fore.LIGHTYELLOW_EX + "You have already chosen this letter")
         else:
             for index, letter in enumerate(self.word):
                 if self.guessed_lett == letter:
                     self.count += 1
                     self.correct_lett[index] = letter
-            correct_msg = "You have chosen the correct letter"
-            self.game_msgs["Correct Letter"] = Fore.LIGHTGREEN_EX + correct_msg
+            self.game_msgs["Correct Letter"] = (
+                Fore.LIGHTGREEN_EX + "You have chosen the correct letter")
         self.game_status()
 
     def game_status(self):
