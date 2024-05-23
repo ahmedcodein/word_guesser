@@ -14,7 +14,7 @@ class WordSelector:
         self.dif_key = dif_key
         self.dif_value = dif_value
         self.word_bank = word_bank
-        self.counter = len(word_bank) # Ensures a complete search
+        self.counter = len(word_bank)  # Ensures a complete search
         self.difficulty_mapper()
 
     def difficulty_mapper(self):
