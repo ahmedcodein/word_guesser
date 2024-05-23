@@ -80,12 +80,14 @@ class DifficultySelection(GameMixins):
                         continue
             except ValueError:
                 self.dif_level_msgs["Value Error"] = (
-                    Fore.RED + "Invalid choice, Please type 1 or 2 or 3"
+                    Fore.RED + "Invalid choice, "
+                    + Fore.RESET + "Please type 1 or 2 or 3:"
                 )
                 self.display()
             except KeyboardInterrupt:
                 self.dif_level_msgs["Ctrl C key"] = (
-                    Fore.RED + "Ctrl C is not allowed! Please type 1 or 2 or 3"
+                    Fore.RED + "Ctrl C is not allowed! "
+                    + Fore.RESET + "Please type 1 or 2 or 3:"
                 )
                 self.display()
 
@@ -99,7 +101,7 @@ class DifficultySelection(GameMixins):
                 print(
                     f"""
             ---------------------------------------------------
-            {dif_value}{Fore.RESET}
+            {dif_value}
             ---------------------------------------------------
                     """
                 )
