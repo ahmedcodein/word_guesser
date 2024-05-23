@@ -208,8 +208,8 @@ class GameMixins:
                     break
                 elif player_input == "no" or player_input == "n":
                     self.clear_screen()
-                    print(
-                        """
+                    print(Fore.LIGHTCYAN_EX + """
+
                          ██████╗ ██████╗ ██████╗██████╗
                         ██╔════╝██╔═══████╔═══████╔══██╗
                         ██║  █████║   ████║   ████║  ██║
@@ -223,7 +223,7 @@ class GameMixins:
                         ██████╔╝  ██║  ███████╗
                         ╚═════╝   ╚═╝  ╚══════╝
                         """
-                    )
+                          )
                     exit()
                 else:
                     raise ValueError
