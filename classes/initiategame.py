@@ -6,9 +6,10 @@ from classes.gamemixins import GameMixins
 
 class InitiateGame(GameMixins):
     """
-    Intiate the game by a welcome message and instructions
-    Then clear the screen upon user order
-    Intiate the Player class
+    This class initiate the game by
+    a welcome message and instructions.
+    Then it clears the screen upon user order.
+    Finally, initiates the Player class
     """
 
     def __init__(self):
@@ -16,7 +17,7 @@ class InitiateGame(GameMixins):
 
     def general_welcome(self):
         """
-       Diplays a welcome message
+       Displays a welcome message
         """
         self.clear_screen()
         self.general_welcome = Fore.LIGHTCYAN_EX + """
@@ -46,8 +47,9 @@ class InitiateGame(GameMixins):
 
     def instructions(self):
         """
-        Display the game rules and instructions
-        then pause and wait for the user action to proceed
+        Displays the game rules and instructions,
+        then pauses and waits for the user action
+        to proceed
         """
         self.clear_screen()
         instructions_rules = Fore.LIGHTCYAN_EX + """
