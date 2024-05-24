@@ -229,3 +229,8 @@ The test results are summarized in the table below.
 ### 5.2. Content and Tools
 
 ### 5.3. Acknowledgement
+
+I would like to express my sincere gratitude to Mr. David Bowers for his outstanding mentorship. With every project, he proved 
+again and again his dedication and integrity to provide all what a student needs to success. His encouragement to use classes for 
+this project and the provision of further resources on the topic have helped me immensely in this project.
+I would also like to thank my family for playing the game and providing their feedback on its outlook and interface.
