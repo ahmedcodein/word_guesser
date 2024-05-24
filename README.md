@@ -36,6 +36,8 @@ A summary of the reasons of choosing this game is:
 
 ### 2.2. Project Objective
 
+From the author perspective, the main objective of developing this game is to learn Python. In particular, the author's intention from the beginning of the research phase is to implement the PP3 with Classes in mind as apposed to a function-based project. The main reason for that is the use of classes is what distinguished an Object Oriented Programming (OOP) from other programming language that do not posses such capability like JavaScript. Where in PP2, the author exposed himself to the use of functions with JavaScript. Therefore, thinking in terms of functions is successfully comprehended. For that reason, building python project with functions will not help the author much in his learning endeavour in this training program. Therefore, in addition to learn programming with Python, the secondary goal is to learn how to program with classes.
+
 #### 2.2.1. Website Owner Objectives
 
 #### 2.2.2. Website Visitor Objectives
