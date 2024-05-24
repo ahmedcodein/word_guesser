@@ -49,7 +49,18 @@ From the author perspective, the main objective of developing this game is to le
 1. A simple and a fun game to spend some free time on
 2. Engaging and challenging
 
-### 2.3. Website Requirements
+### 2.3. Game Requirements
+
+Based on the main objectives distilled from the section 2.2, 2.2.1 and 2.2.2, the following list of requirements is extracted:
+
+1. The game is python classes-based code
+2. A landing window welcoming the player
+3. A simple, yet informative list of instructions to lead the player as how to play
+4. A way to collect the player name
+5. The game has three difficulty levels, easy, intermediate and difficult
+6. A possibility to allow the player to choose the difficulty level
+7. A game Dashboard displaying the game settings and status
+8. A way to allow the player to restart or exit the game
 
 ### 2.4. Planning
 
