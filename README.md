@@ -44,7 +44,10 @@ From the author perspective, the main objective of developing this game is to le
 2. Engaging by having dynamic and colorful responses and presentations
 3. Challenging through the introduction of multiple difficulty levels
 
-#### 2.2.2. Website Visitor Objectives
+#### 2.2.2. Game Visitor Objectives
+
+1. A simple and a fun game to spend some free time on
+2. Engaging and challenging
 
 ### 2.3. Website Requirements
 
