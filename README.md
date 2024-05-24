@@ -198,6 +198,14 @@ In this section, the conceptual data model of game is presented. Up until this p
 
 #### 2.5.1. Technologies Used
 
+The following list of technologies are used to develop the game:
+
+1. Python: Programming Language
+2. GitHub: Development Platform
+3. Gitpod: Cloud Development Environment
+4. Heroku: Development Platform
+5. CI Python Linter: Python code style convention checker 
+
 #### 2.5.2 Test Results
 
 The test results are summarized in the table below.
