@@ -1,6 +1,10 @@
 # Word Guesser
 
+**"The difference between the almost right word and the right word is really a large matter.
+It's the difference between the lightning bug and the lightning", - Mark Twain**
+
 ## 1. Introduction
+
 The word guesser game is a game revolves around figuring out what word the computer is picked.
 The player then try to guess the word letter by letter. The player wins if all the guessed letters
 are correct given a limited number of tries/chances.
