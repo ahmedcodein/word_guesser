@@ -226,6 +226,78 @@ The test results are summarized in the table below.
 
 ## 2.5.4. Deployment, Clone and Fork Procedures
 
+The following procedure is implemented to deploy the game on Heroku platform:
+
+1. Create a list of requirements/dependencies for the game. In order to that, the following steps is to be executed:
+    - Go to the command line terminal of development environment (Gitpod)
+    - Type "pip3 freeze > requirements.txt" (requirements.txt is the file where the list of requirements is stored)
+    - Add this change and commit it
+    - Push the change to the GitHub repository
+2. Sign in to Heroku account 
+3. On Heroku dashboard, click on "Create a new app" button
+4. Within the "Create New App" window, go to the "App name" input field and type in an App name
+5. Within the same window, choose your region from the "Choose region" dropdown menu
+6. Click on "Create app" button
+7. New window opens for the App that is just created
+8. Within this window, from the 7 taps available, select "Settings"
+9. Within the setting tap window, go to "Confg Vars"
+10. Click on "Create Confg Vars"
+11. Two input fields appear, one for key and one for value
+    - Within the "key" input field type: PORT
+    - Within the "value" field type: 8000
+    - Click on "Add"
+12. Scroll down to "Buildpacks", within the Buildpacks, follow the listed sub-steps below:
+    - Click on "Add buildpacks"
+    - A "Add buildpack" window opens
+    - From the list, choose "Python" first
+    - Click on "Save changes" button
+    - From the same list, choose "nodejs" second
+    - Click on "Save changes" button
+    - Ensure Keeping the order packs as described in last 4 sub-steps
+13. Now go to the "Deploy" tap right at the top of the window
+14. Within the "Deployment method" row, click on "GitHub" button
+15. Within the "Connect to GitHub" (One row down the Deployment method) click on "Connect to GitHub"
+16. Wait a bit for loading
+17. Now on the same row and within the search field, type the name of the project repository and click on "Search" button
+18. Now click connect
+19. Once it is connected to the project repository, scroll down to "Manual Deploy"
+20. Within this row, click on "Deploy Branch"
+21. Once the deploy log is finished, a message appears and hopefully says: "You app was successfully deployed"
+22. Below it a "View" button appears as well
+22. Click on the "View" to open the deployed project on a new browser tap 
+
+Note: Throughout the development, the author chooses only the manual deployment.
+
+
+The following procedure is implemented to clone from the GiTHub repo into Gitpod:
+
+1. Go to your repositories 
+2. Click on the new created project repository
+3. Go to the code in the upper right corner
+4. Click on the Code dropdown menu
+5. Select local 
+6. Select Clone/HTTPs
+7. Copy the url provided
+8. Open new browser tap
+9. Open your Gitpod Workspace
+10. Create new workspace
+11. Click on select new Repository
+12. Paste the url in input window
+13. Click continue
+
+For any person interested to work on the source code of this project, here is the procedure that needs to be followed to make a fork.
+
+1. Go to ahmedcodein repositories
+2. Click on word_guesser repo
+3. In the upper right corner, click of fork drop down menu
+4. Click on create new fork
+5. Create new fork window opens
+6. Select the owner of the repo
+7. Add a repo name
+8. Add a description if needed
+9. Click create fork 
+
+
 ## 3. Features
 
 ## 4 Future Work
