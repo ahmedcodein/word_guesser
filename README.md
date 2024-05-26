@@ -215,13 +215,16 @@ The test results of CI Python Linter are summarized in the table below. The test
 
 #### 2.5.3. Bugs
 
+This subsection is devoted to a list of bugs encounter the author during the development.
+All the bugs are fixed.
+
 ##### 2.5.3.1. Fixed Bugs
 
 | Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
 | -----------| ----------- |---------- |------------ |------------ |
-|1| | | | |
-
-##### 2.5.3.2. Unfixed Bugs
+|1| Class DifficultySelection in line 38|f-string is used without variable | The f-string is removed| |
+|2| Class WordSelector|for short list of words in word_bank, the search does not fully span all the word in the list | introducing a counter that has word_bank length to ensure the complete search for the word in the word_bank| |
+|3| Classes: Player, DifficultySelection, PlayerGuess and GameMixins|Using for loop for dictionary and items method, alert is observed when either the key or the value of the dictionary is not used | Use either values or keys method, and remove the unused in the key-value pair| |
 
 ## 2.5.4. Deployment, Clone and Fork Procedures
 
