@@ -206,11 +206,12 @@ The following list of technologies are used to develop the game:
 
 #### 2.5.2 Test Results
 
-The test results are summarized in the table below.
+The test results of CI Python Linter are summarized in the table below. The test is pass, no errors or warnings are observed. The test captures can be found on 
+[Test file](test.md) file.
 
 | Test ID No. | Test Name | Test Result | Test Comment|
 | ----------- |---------- |------------ |------------ |
-| 1 | | | |
+| 1 | CI Python Linter| pass |The test is conducted for each class |
 
 #### 2.5.3. Bugs
 
