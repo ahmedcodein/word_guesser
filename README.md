@@ -67,17 +67,20 @@ Based on the main objectives presented in 2.2, 2.2.1 and 2.2.2, the following li
 
 ### 2.4. Planning
 
+The major part of the planing is related to crafting an initial logic of the game.
+One approach of course is to use a flow chart. The author, however, decides to develop a what might be considered to be a simplistic Pseudocode. The reasons for that is explained in the following subsection.
+
 #### 2.4.1. Game Logic
 
-During the planning phase, the author chooses to write a pseudocode for this project. Although, this is not part of the assessment requirements of this project and it is a time consuming, the author takes the risk of writting it. The reason is that by writting the pseudocode, four paramount purposes are served, these are:
+During the planning phase, the author chooses to write a simple Pseudocode for the project. The reason is that by writing such Pseudocode although not sophisticated by any standard, four paramount purposes are served, these are:
 
 1. Helping the author to comprehend the general logic of the game.
 2. Helping the author to build a mental structure of the entire game. This aids the author to write the code with modularity in mind (let this modularity be functions or classes) with each module as simple as possible.
-3. Helping the author to correct any misperception about how the author thinks the program would behave and how it actually behaves when the code runs.
-4. Helping the author to practice the art of creating pseudocodes as early as possible in his software development journey.
+3. Helping the author to correct any misperception about how the author thinks the program would behave and how it would actually behave when the code runs.
+4. Helping the author to practice the art of creating a standard Pseudocodes as early as possible in his software development journey.
 
-The following pseudocode represents the core of the game logic only. Form the author perspective, the core of the game logic is what matters for this project. Therefore, the final code, and only if the time allows, may include additional modules, e.g. for game decorations etc. 
-Any additional code will have been written in the final stages of the implementation shall not be included in this pseudocode. Nevertheless, any change that has a direct impact on the core of the game logic is planned be updated here.
+This Pseudocode, however, represents the core of the game logic only. The final code, and only if the time allows, may include additional modules, e.g. for game decorations etc. 
+Any additional code will have been written in the final stages of the implementation shall not be included in this Pseudocode. Nevertheless, any change that has a direct impact on the core of the game logic is planned be updated here.
 
 ###### Word Guesser Pseudocode
 
@@ -91,12 +94,12 @@ initiate_game:
 
     - display a welcome message
     - display the instructions
-    - go to player_name
+    - go to player
 
-player_name:
+player:
 
     - input: Please input your first name:
-        - if the input name is more than 20 or it is not part of the english alphabit:
+        - if the input name is more than 10 or it is not part of the english alphabetic:
             - display: Please provide a valid name with less than 21 letters
         - else: 
             - display: Hello “Player’s first name”
@@ -124,65 +127,50 @@ word_selector:
         - randomly choose a word with no less than five-letter length from the words_storage
         - store the word in word_container
         - return word_container
-
-num_of_chances_calculator:
-
     - num_of_chances = length of word_container
-    - display num_of_chances: “You have got ‘num_of_chances ‘ chances”
-    - return num_of_chances
+    got to player_guess
 
 player_guess:
 
     - input: Please Enter a letter:
-    - if the letter is not part of the english alphabit:
+    - if the letter is not part of the English alphabetic:
         - display: Please enter a valid letter
         - return to Input
-    - return the letter
-    - go to letters_container
-
-letters_container:
-
-    - set count as the number of times this function is called
-    - set guessed_letter_container to empty
-    - if the count is not 0:
-	    - if the letter in the letter_container
-		    - display: “You chose this letter already, please select another one”
-		    - Go to player_guess
-	- else if:
-        - add the guessed letter into the guessed_letter_container on the right index
-        - display guessed_letter_container
-        - return the letter
-        - go to guess_evaluator
-
-guess_evaluator:
-
-    - if the letter in the word_container:
-        - remove the letter from the word_container
-        - display “letters_container, Great Job, you guessed the right letter!”
-        - if word_container length is 0:
-            - go to game_status
-        - else:
-            - go to player_guess
-        - return word_container
     - else:
-        - display: “Bad luck, you guessed the wrong letter”
-        - decrease num_of_chances by 1
-        - if num_of_chances is 0:
-	        - go to game_status
-        - else: 
-            - go back to player_guess
-            - return num_of_chances
+        return the letter
+    - go to evaluate_guessed_letters
+
+evaluate_guessed_letters:
+
+    - if the guessed_letter not in the word:
+        go to letter_is_wrong
+    - else:
+        go to letter_is_correct
+
+letter_is_wrong:
+    if guessed_letter is in wrong_letter_container:
+        display "You have already chosen this letter
+    else:
+        append the letter to the wrong_letter_container
+    go to game_status
+
+letter_is_correct:
+    if guessed_letter is in wrong_letter_container:
+        print out "You have already chosen this letter
+    else:
+        append the letter to the wrong_letter_container
+    go to game_status
 
 game_status
 
-    - if num_of_chances == 0:
+    - if the length of the correct_letter_container is equal to word length:
 	    - display: Bad luck, you lost this time
 	    - go to restart_the_game	
-    - if the length of the word_container == 0:
+    - if the length of the correct_letter_container is equal to word length:
 	    - display: Congratulations, you won!
 	    - go to restart_the_game
 
-Restart_game:
+restart_game:
 
     - display: Do you want to restart the game?Yes/NO?
         - yes:
@@ -191,10 +179,13 @@ Restart_game:
 		    - exit the game
 
 ```
+**Note: The Pseudocode logic, if the author is allowed to call it Pseudocode, has significantly changed in evaluate_guessed_letters stage. Initially, the author wanted to remove the guessed letter each time wrong guess occurs from the word_container. Where,word_container is a list contains all the chosen word letters. Then use the empty list, after all the chances exhausted as a signal of game over with player lose event. This is turned to be more complex than the proposed approach present in the new version of the Pseudocode.** 
+
+Few small changes occur to the Pseudocode, e.g. changing method names etc... However, The change described in the note above represents the only major change to the Pseudocode.
 
 #### 2.4.2 The Conceptual Data Model
 
-In this section, the conceptual data model of game is presented. Up until this point, only the initial parts of the game is considered when developing the data model.
+In this section, the conceptual data model of game is presented. This conceptual data model is built after the development is complete. It is therefore might not be fully suited to be part of the planing phases, the author decides to included in here since it aids the game logic understanding.
 
 ![Conceptual Data Model](docs/images/conceptual_data_model.png)
 ### 2.5. Execution
