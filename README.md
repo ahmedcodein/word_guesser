@@ -302,6 +302,100 @@ For any person interested to work on the source code of this project, here is th
 
 ## 3. Features
 
+This section provides a detailed description of the main features in the game with screenshots.
+
+- Landing page
+The landing page consists of a general welcoming message to the game. The player needs to press any key to proceed to the next page which is the instruction page. See the screenshot below:
+
+![Welcoming Message](docs/images/general_welcome.png)
+
+- Instructions page
+
+Once the player press any key, the instructions page appears. The main purpose of this page is to provide the rules and instructions of the game. See the screenshot below:
+
+![Instructions](docs/images/instructions.png)
+
+- Player Name
+
+Once the player presses any key, the console asks the player to enter the player first name. The name is not valid if it contains non-alphabetic letters, spaces, empty or it consists of more than ten letters. See the screenshot below:
+
+![Player Name](docs/images/input_name.png)
+
+A selected error message, when entering invalid inputs for the first name, is provided in the screenshot below where the player typed numbers as the first name.
+
+![Name Error Message](docs/images/name_err_msg.png)
+
+- Difficulty Selection
+
+Once the player enters the first name correctly, the difficulty selection window appears, with a list of difficulties the player can choose from. Please see the screenshot below:
+
+![Difficulty Selection Window](docs/images/difficulty_selection.png)
+
+If the player enters a non valid input, an error message appears asking the player to enter either 1 or 2 or 3. See the screenshot below:
+
+![Difficulty Choice Message](docs/images/difficulty_err_msg.png)
+
+Once the player enters the correct difficulty choice, a message appears displaying the choice. In order to proceed, the player has to press any key. See the screenshot below:
+
+![Difficulty Choice Message](docs/images/difficulty_choice.png)
+
+Game Dashboard
+
+Once the player proceeds, the game dashboard appears. The dashboard contains all the information the player needs in order to play the game. It is divided into three main section. 
+
+    A. Game Setting:
+
+    It contains the player name, the difficulty level and the number of chances based on the chosen difficulty level.
+    
+    B. Game Status:
+    
+    This section is dynamic, it changes according to the player choices. It contains a container showing the correct letters adding if they player is guessing the correct letter. It contain another container for the wrong letters. Finally, it contains a counter that count the number of chances left for the player after every choice.
+
+    C. Game Message:
+    
+    This section is concerned with the provision of user feedback. It helps the player to know if the guessed letter is wrong or correct, if the letter is guessed already or simple the entered character is not valid. It also tells the user if the player won or lost. See the screen shoot from multiple scenarios.
+
+The game here is in easy level. The player has 3 chances to guess a three-letter word
+
+![Game Dashboard](docs/images/game_dashboard.png)
+
+In the screenshot below, it seems that the player got the letter write.
+
+![Correct Letter](docs/images/correct_letter.png)
+
+Here is an waring message, that the player has already entered the letter.
+
+![Wrong Letter](docs/images/duplicate_guess.png)
+
+The luck does not stayed long with our friend, the player got it wrong here.
+
+![Wrong Letter](docs/images/wrong_letter.png)
+
+There are a list error messages can also appear if the player enters invalid inputs, non-alphabetic characters, including pressing Ctrl C and Ctrl D. A Selected example is presented in the following screenshots.
+
+![Input letter Error Message](docs/images/input_letter_err_msg.png)
+
+A Won message appears when the player guesses all the letter correctly without exhausting the available chances. See the screen below:
+
+![Win Message](docs/images/win_msg.png)
+
+if the player exhausted all the chances the loss message appears, as shown below:
+
+![Loss Message](docs/images/loss_msg.png)
+
+As it can be seen from the two screenshots above, once the game is concluded a messages appears asking the player if game reset is needed.
+
+In case the player entered invalid input for the reset message, an error message appears. Such scenario happens when the player does not enter "yes" or "y" for reset nor "no" or "n" for exit.
+The error message also considers if the player pressed Ctrl C or Ctrl D. A selected example is shown below:
+
+![Reset Error Message](docs/images/reset_err_msg_ctrl_c.png)
+
+If the player decides to reset the game by entering "yes" or "y"
+the game will take the player back to the difficulty selection. If the player, however, decides to leave the game, than you message appear as shown below:
+
+![Exit Game](docs/images/exit_game.png)
+
+
 ## 4 Future Work
 
 ## 5 Credits
