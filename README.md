@@ -398,6 +398,12 @@ the game will take the player back to the difficulty selection. If the player, h
 
 ## 4 Future Work
 
+The game has the potential to extend its capabilities to include additional options and features, for instance:
+
+1. Extending the difficulty levels to cover words with 4, 7 letters or more
+2. More languages can be included to reach larger base of players who are interested to play the game in other languages
+3. A score to account for the number of words are guessed with each game round
+
 ## 5 Credits
 
 ### 5.1 References
