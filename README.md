@@ -35,27 +35,26 @@ conducted on YouTube and relevant websites.
 A summary of the reasons of choosing this game is:
 
 1. Satisfactory amount of resources is available to extract information about the game. Whether under the word guesser name, or Hangman etc..., the game seems to be very popular among python developers. This makes it a good candidate since it is relatively easy to find information about how to approach the development. 
-2. Although, it is limited in its scope, its code can cover multiple python concepts. Hence, it represents a low-risk sand-box to learn those concepts in considering the available time for PP3.
-
+2. Although, it is limited in its scope, its code can cover multiple python concepts. Hence, it represents a low-risk sand-box to learn those concepts considering the available time for PP3.
 
 ### 2.2. Project Objective
 
-From the author perspective, the main objective of developing this game is to learn Python. In particular, the author's intention from the beginning of the research phase is to implement the PP3 with Classes in mind as apposed to a function-based project. The main reason for that is the use of classes is what distinguished an Object Oriented Programming (OOP) from other programming language that do not posses such capability like JavaScript. Where in PP2, the author exposed himself to the use of functions with JavaScript. Therefore, thinking in terms of functions is successfully comprehended. For that reason, building python project with functions will not help the author much in his learning endeavour in this training program. Therefore, in addition to learn programming with Python, the secondary goal is to learn how to program with classes.
+From the author perspective, the main objective of developing this game is to learn Python. In particular, the author's intention from the beginning of the research phase is to implement the PP3 with Classes in mind as apposed to a function-based project. The main reason for that is that the use of classes is what distinguished an Object Oriented Programming (OOP) from other programming language that do not posses such capability. In PP2, the author exposed himself to the use of functions with JavaScript. Therefore, thinking in terms of functions is successfully comprehended. For that reason, building python project with functions will not help the author much in his learning endeavour in this training program. Therefore, in addition to learn programming with Python, the secondary goal is to learn how to program with classes.
 
 #### 2.2.1. Game Owner Objectives
 
 1. Easy to understand and simple to navigate
-2. Engaging by having dynamic and colorful responses and presentations
+2. Engaging by having dynamic and colorful responses and presentation
 3. Challenging through the introduction of multiple difficulty levels
 
 #### 2.2.2. Game Visitor Objectives
 
-1. A simple and a fun game to spend some free time on
+1. Simple to understand and fun to play
 2. Engaging and challenging
 
 ### 2.3. Game Requirements
 
-Based on the main objectives distilled from the section 2.2, 2.2.1 and 2.2.2, the following list of requirements is extracted:
+Based on the main objectives presented in 2.2, 2.2.1 and 2.2.2, the following list of requirements is distilled:
 
 1. The game is python classes-based code
 2. A landing window welcoming the player
