@@ -15,6 +15,10 @@ The player has three type of chances based on the difficulty choice. The difficu
 - Intermediate with five chances. There, the picked word is a five-letter word
 - Difficult with six chances. There, the picked word is a six-letter word
 
+A life link to the game is in [Word Guesser](https://words-guesser-62606aa4731f.herokuapp.com/) 
+
+![Word Guesser](docs/images/intro.png)
+
 ## 2. Development Process
 
 The process followed by the author consists of five phases, these are:
