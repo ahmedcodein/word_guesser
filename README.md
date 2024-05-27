@@ -414,7 +414,25 @@ The game has the potential to extend its capabilities to include additional opti
 
 ### 5.1 References
 
+- CI Study Materials, [Code Institute](https://codeinstitute.net/de/bildungsgutschein/?utm_term=code%20institute&utm_campaign=CI%2B-%2BUK%2B-%2BSearch%2B-%2BBrand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=16493764737&hsa_grp=132915436966&hsa_ad=635790877675&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNlk5PQerlGAVupYRw0WPKtdiPb9QBFPzUv-YEGIv5cb6FJe1G24uVwaAoZKEALw_wcB)
+- CI PP3 Student Project, [Battleships](https://github.com/dnlbowers/battleships)
+- CI PP3 Student Project, [Hangman](https://github.com/ilyasolgun11/hangman)
+- CI PP3 Student Project, [Life in Number](https://github.com/queenisabaer/life-in-numbers)
+- CI PP3 Student Project, [Memory Game](https://github.com/CsClown/MemoryGame)
+- Python OOP Tutorials, [Working with Classes](https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
+- FreeCodeCamp.org, [12 Beginner Python Projects - Coding Course](https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
+- Delft Stack, [How to Clear Console in Python](https://www.delftstack.com/howto/python/python-clear-console/)
+- Markdown Cheat Sheet, [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
+- Conventional Commits, [A specification for adding human and machine readable meaning to commit messages](https://www.conventionalcommits.org/en/v1.0.0/)
+
 ### 5.2. Content and Tools
+
+- [ChatGPT](https://chat.openai.com/auth/login?sso) is used to generate the Background and the Favicon images.
+- [ChatGPT](https://chat.openai.com/auth/login?sso) is used to generate the list of words required for this game.
+- [ChatGPT](https://chat.openai.com/auth/login?sso) is used to to understand various programming concepts.
+- [Word counter](https://wordcounter.net/character-count) is used to track the number of characters of each git commit.
+- [Favicon Generator](https://www.favicon.cc/?) is used to generate the Favicon file.
+- [Image Resizer](https://redketchup.io/image-resizer) is used to convert the favicon row image from Web Picture (webp) into Portable Network Graphics (PNG) extension.
 
 ### 5.3. Acknowledgement
 
