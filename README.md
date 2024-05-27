@@ -395,6 +395,12 @@ the game will take the player back to the difficulty selection. If the player, h
 
 ![Exit Game](docs/images/exit_game.png)
 
+- Favicon
+
+The last feature is the Favicon for the website, the Favicon consists of two letters A and Z with a background color of light cyan. The image is created by [ChatGPT](https://openai.com/).
+
+![Favicon](docs/images/favicon.png)
+
 
 ## 4 Future Work
 
