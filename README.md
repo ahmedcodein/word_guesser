@@ -433,6 +433,7 @@ The game has the potential to extend its capabilities to include additional opti
 - [Word counter](https://wordcounter.net/character-count) is used to track the number of characters of each git commit.
 - [Favicon Generator](https://www.favicon.cc/?) is used to generate the Favicon file.
 - [Image Resizer](https://redketchup.io/image-resizer) is used to convert the favicon row image from Web Picture (webp) into Portable Network Graphics (PNG) extension.
+- [Lucid](https://lucid.app/documents#/documents?folder_id=home) is used to create the Conceptual Data Model
 
 ### 5.3. Acknowledgement
 
