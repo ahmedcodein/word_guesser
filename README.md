@@ -226,6 +226,16 @@ All the bugs are fixed.
 |2| Class WordSelector|for short list of words in word_bank, the search does not fully span all the word in the list | introducing a counter that has word_bank length to ensure the complete search for the word in the word_bank| |
 |3| Classes: Player, DifficultySelection, PlayerGuess and GameMixins|Using for loop for dictionary and items method, alert is observed when either the key or the value of the dictionary is not used | Use either values or keys method, and remove the unused in the key-value pair| |
 
+##### 2.5.3.2 Unfixed Bugs
+
+In this subsection a list of unfixed bugs with description is provided. The list contains three bugs, all of them are not the result of the author under performance. The three bugs, to the best of the author knowledge, come with the original Python console.
+
+| Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
+| -----------| ----------- |---------- |------------ |------------ |
+|1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with default design of CI console. Please refer to [test.md](test.md) to see the screenshot|
+|2| HTML file|A form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form. | Chrome DevTools suggestion: To fix this issue, add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author does not consider finding a resolution to this issue since it comes as a default issue with CI console design, Please refer to [test.md](test.md) to see the screenshot|
+|3| CI Python Console|There is an issue with the console occurs when the game is reset multiple time. It seems that console does not effectively clear the screen completely after each game reset, resulting in accumulating some previous screen views from earlier rounds| NA| The author assumes this as a default flaw in Python Console. Please refer to [test.md](test.md) to see the screenshot|
+
 ## 2.5.4. Deployment, Clone and Fork Procedures
 
 The following procedure is implemented to deploy the game on Heroku platform:
