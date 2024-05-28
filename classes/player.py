@@ -44,13 +44,13 @@ class Player(GameMixins):
                         "Please no more than 10 letters.")
                 elif any(i.isspace() for i in self.name):
                     self.name_err_msg["Spaces"] = (
-                        "Please no empty name or spaces.")
+                        "Please no spaces.")
                 elif any(i.isdigit() for i in self.name):
                     self.name_err_msg["Numbers"] = (
                         "Please only letters, no numbers.")
                 elif not any(i.isalpha() for i in self.name):
                     self.name_err_msg["Non-alphabetic"] = (
-                        "Please only alphabetic letters.")
+                        "Please only alphabetic letters and no empty name.")
                 else:
                     self.welcome()
                     break
