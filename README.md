@@ -327,9 +327,9 @@ The last feature is the Favicon for the website. The Favicon consists of two let
 ![Favicon](docs/images/favicon.png)
 
 
-#### 2.5.3 The Conceptual Data Model
+#### 2.5.3 Conceptual Data Model
 
-In this section, the conceptual data model of the game is presented. This conceptual data model is built after the development is complete. It is therefore might not be fully suited to be part of the planing phase. However, the author includes it in here because it aids the understanding of the game logic.
+In this section, the conceptual data model of the game is presented. This conceptual data model is built after the development is complete. It can be read in conjunction with reading of the game logic in the planing section for further clarity.
 
 The game consists of five classes and one mixin class. The mixin class contains methods that can be used by any of the other classes.
 As it is shown in the figure below, all the relationships are one to one relationship with an initiate rule.
@@ -370,8 +370,8 @@ In this subsection a list of unfixed bugs with description is provided. The list
 | Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
 | -----------| ----------- |---------- |------------ |------------ |
 |1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
-|2| HTML file|Withing the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
-|3| Game URL| -ms-user-select is a vendor extension and -webkit-user-select is a vendor extension|NA| The author decides to leave the warnings the way they are since the they come with original Python console. Please refer to [Test file](test.md) to see the screenshot|
+|2| HTML file|Within the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the issue comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
+|3| Game URL| appeared on W3C CSS Validation Service (-ms-user-select is a vendor extension and -webkit-user-select is a vendor extension)|NA| The author decides to leave the warnings the way they are since the they come with original Python console. Please refer to [Test file](test.md) to see the screenshot|
 |4| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
 
 #### 2.5.6 Deployment, Clone and Fork Procedures
