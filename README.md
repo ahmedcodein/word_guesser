@@ -468,7 +468,9 @@ For any person interested to work on the source code of this project, here is th
 
 The game has the potential to extend its capabilities to include additional options and features, for instance:
 
-1. Extending the difficulty levels to cover words with 4, 7 letters or more
+1. Instead of exiting the game completely, the game can go back to the general welcome screen with two options displayed on that screen. The first 
+is to display the instructions once again and the second option is to jump directly into the difficulty selection
+2. Extending the difficulty levels to cover words with 4, 7 letters
 2. More languages can be included to reach larger base of players who are interested to play the game in other languages
 3. A score to count the number of guessed words with each round
 
