@@ -5,10 +5,10 @@ It's the difference between the lightning bug and the lightning" (Mark Twain)**
 
 ## 1. Introduction
 
-The word guesser game is a game revolves around figuring out the word the computer is picked.
-The player then try to guess the word letter by letter. The player wins if all the guessed letters
+The word guesser is a game revolves around figuring out the word the computer is picked.
+The player then tries to guess the word letter by letter. The player wins if all the guessed letters
 are correct given a limited number of tries/chances.
-The number of chances is defined as how many wrong letters are entered by the player before loosing.
+The number of chances is defined as how many wrong letters are entered by the player before losing.
 The player has three type of chances according to the difficulty choice. The difficulty choices are:
 
 - Easy with three chances. There, the picked word is a three-letter word
@@ -21,7 +21,7 @@ A link to the game is in [Word Guesser](https://words-guesser-62606aa4731f.herok
 
 ## 2. Development Process
 
-The process followed by the author consists of five phases, these are:
+The development process followed by the author consists of five phases, these are:
 
 1. Research
 2. Objective
@@ -33,23 +33,23 @@ These phases are presented below with a detailed account of each phase.
 
 ### 2.1. Research and Selection Criteria
 
-The research phase commences with a survey on Portfolio Project 3 (PP3) works published by Code Institute(CI) students on the pear-review channel.
-There is a wealth of information there where the author is able to extract and learn from. Additionally, The author conducted further research on YouTube and relevant websites. The search aims to identify a project idea that meets the criteria set by the author.
+The research phase commences with a survey on Portfolio Project 3 (PP3) works published by Code Institute (CI) students on the pear-review channel.
+There is a wealth of information there where the author is able to extract and learn from. Additionally, the author conducted further research on YouTube and relevant websites. The search aims to identify a project idea that meets the selection criteria set by the author.
 
 The selection criteria for selecting the project topic are:
 
 1. Limited Scope
 2. A range of python concepts can be implemented
-3. Enough resources in the literature about how to program the project in python
+3. Enough resources available in the literature about how to program the project in python
 
-The research phases is concluded after settling on the Word Guesser game. The game offers many advantages. These advantages converge with selection criteria set by the author as follows:
+The research phase is concluded after settling on the Word Guesser game. The game offers many advantages. These advantages converge with the aforementioned selection criteria. The advantages are summarized in the following two points:
 
 1. The literature offers a satisfactory resources about the game. This helps the author to collect the fundamental information needed to construct the game logic.
-2. The game is limited in its scope. Nevertheless, its code can cover multiple python concepts. Therefore, coding this game represents a low-risk sand-box to learn those concepts.
+2. The game is limited in its scope.Its code, however, can cover multiple python concepts. Hence, Working on developing this game offers a low-risk sand-box to learn those concepts.
 
 ### 2.2. Project Objective
 
-From the author perspective, the main objective of developing this game is to learn Python. In particular, the author's intention from the beginning is to implement the PP3 with Classes in mind as apposed to a function-based project. The use of classes is what distinguished an Object Oriented Programming (OOP) from other programming language that do not posses such capability. In PP2, the author exposed himself to the use of functions with JavaScript. Therefore, thinking in terms of functions is comprehended. For that reason, building python project with functions will not help the author much in his learning journey.Therefore, in addition to learn programming with Python, the secondary goal is to learn how to program with classes.
+From the author perspective, the main objective of developing this game is to learn Python. In particular, the author's intention from the beginning is to implement the PP3 with Classes in mind as apposed to a function-based project. The use of classes is what distinguished an Object Oriented Programming (OOP) from other programming language that do not posses such capability. In PP2, the author exposed himself to the use of functions with JavaScript. Therefore, thinking in terms of functions is comprehended. For that reason, building python project with functions will not help the author much in his learning journey.Therefore, in addition to learning programming with Python, the secondary goal is to learn how to program with classes.
 
 Although, the project is built with classes, the other OOP key concepts were not considered, such as:
 
@@ -58,7 +58,7 @@ Although, the project is built with classes, the other OOP key concepts were not
 - Polymorphism
 - Abstraction
 
-Nevertheless, implementing the game with glass, allowed the author to become familiar with these concepts. Additionally, by reviewing the finished code at the end of the development, the author is able to anticipate where such concepts can be invoked into the code for future improvement.
+Nevertheless, implementing the game with classes allowed the author to become familiar with these concepts. Additionally, by reviewing the finished code at the end of the development, the author is able to anticipate where such concepts can be invoked into the code for future improvement.
 
 #### 2.2.1. Game Owner Objectives
 
@@ -95,14 +95,14 @@ In the following subsections the game logic and a conceptual data model are pres
 #### 2.4.1. Game Logic
 
 The major part of the planing is related to crafting an initial logic of the game.
-One approach of course is to use a flow chart. The author, however, decides to develop a what might be considered to be a simplistic Pseudocode. The reason is that by writing such Pseudocode although not sophisticated by any standard, four paramount purposes are served, these are:
+One approach, of course, is to use a flow chart. The author, however, decides to develop a what might be considered to be a simplistic Pseudocode. The reason is that by writing such Pseudocode although not sophisticated by any standard, four paramount purposes can be served, these are:
 
 1. Helping the author to comprehend the general logic of the game.
 2. Helping the author to build a mental structure of the entire game. This aids the author to write the code with modularity in mind (let this modularity be functions or classes) with each module as simple as possible.
 3. Helping the author to correct any misperception about how the author thinks the program would behave and how it would actually behave when the code runs.
-4. Helping the author to practice the art of creating a standard Pseudocodes as early as possible in his software development journey.
+4. Helping the author to practice the art of creating a standard Pseudocodes as early as possible in his learning journey.
 
-This Pseudocode, however, represents the core of the game logic only. The final code, and only if the time allows, may include additional modules, e.g. for game decorations etc. 
+This Pseudocode represents the core of the game logic only. The final code, and only if the time allows, may include additional modules, e.g. for game decorations etc. 
 Any additional code will have been written in the final stages of the implementation shall not be included in this Pseudocode. Nevertheless, any change that has a direct impact on the core of the game logic is planned be updated here.
 
 ###### Word Guesser Pseudocode
@@ -232,7 +232,7 @@ The following list of technologies are used to develop the game:
 #### 2.5.2 Test Results
 
 The test results of CI Python Linter are summarized in the table below. The test comes out clear from any errors or warnings. The test captures can be found in 
-[Test file](test.md) file.
+[Test file](test.md).
 
 | Test ID No. | Test Name | Test Result | Test Comment|
 | ----------- |---------- |------------ |------------ |
@@ -253,7 +253,7 @@ In this subsection, a list of fixed bugs is recounted with a description of how 
 | -----------| ----------- |---------- |------------ |------------ |
 |1| Class DifficultySelection in line 38|f-string is used without variable | The f-string is removed| |
 |2| Class WordSelector|In case of short list of words in word_bank, the search does not fully cover all the words in the list | Introducing a counter that has a length equals to the length of the word_bank. This ensures the complete word search in the word_bank| |
-|3| Classes: Player, DifficultySelection, PlayerGuess and GameMixins|When using a For loop for dictionary with items() method, an alert is observed. The alert complains that either the key or the value of the dictionary is not used | Use either values() or keys() method instead of items(). Then remove the unused item, i.e. either the key or the value from the For loop| |
+|3| Classes: Player, DifficultySelection, PlayerGuess and GameMixins|When using a For loop for dictionary with items() method, an alert is observed. The alert complains that either the key or the value of the dictionary is not used | Use either values() or keys() methods instead of the items() method. Then remove the unused item, i.e. either the key or the value from the For loop| |
 
 ##### 2.5.3.2 Unfixed Bugs
 
@@ -262,12 +262,12 @@ In this subsection a list of unfixed bugs with description is provided. The list
 | Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
 | -----------| ----------- |---------- |------------ |------------ |
 |1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
-|2| HTML file|A form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
+|2| HTML file|Withing the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
 |3| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
 
 ## 2.5.4. Deployment, Clone and Fork Procedures
 
-This section is devoted to explain the various procedures conducted by the author to deploy and clone the game code. Additionally, for those how are interested to create fork from the main branch, a dedicated procedure is also provided.
+This section is devoted to explain procedures conducted by the author to deploy and clone the game code. Additionally, for those who are interested to create fork from the main branch, a dedicated procedure is also provided.
 
 - Heroku
 
@@ -361,13 +361,13 @@ This section provides a detailed description of the main features of the game wi
 
 - Welcome Screen
 
-The Welcome Screen consists of a general welcoming message. The player needs to press any key to proceed to the next screen. See the screenshot below:
+The Welcome Screen consists of a general welcome message. The player needs to press any key to proceed to the next screen. See the screenshot below:
 
 ![Welcoming Message](docs/images/general_welcome.png)
 
 - Instructions Screen
 
-Once the player press any key, the instructions screen appears. The main purpose of this screen is to provide the rules and the instructions of the game. See the screenshot below:
+Once the player presses any key, the instructions screen appears. The main purpose of this screen is to provide the rules and the instructions of the game. See the screenshot below:
 
 ![Instructions](docs/images/instructions.png)
 
@@ -405,11 +405,11 @@ This is a static section. It contains the player name, the difficulty level and 
     
 B- Game Status:
 
-This section is dynamic. It changes according to the player choices. It contains a container showing the correct letters are adding if they player is guessing the correct letter. It contain another container for the wrong letters. Finally, it contains a counter that count the number of chances left for the player after every choice.
+This section is dynamic. It changes according to the player choices. It contains a container showing the correct letters are adding if they player is guessing the correct letter. It contains another container for the wrong letters. Finally, it posses a counter that count the number of chances left for the player after every choice.
 
 C- Game Message:
 
-This section is concerned with the provision of user feedback. It helps the player to know if the guessed letter is wrong or correct, if the letter is guessed already or the entered character is not valid. It also informs the user if the game status is won or lost. See the screenshot for multiple scenarios.
+This section is concerned with the provisioning of game feedback. It helps the player to know if the guessed letter is wrong or correct, if the letter is guessed already or the entered character is not valid. It also informs the player if the game status is won or lost. See the screenshot for multiple scenarios.
 
 The game here is in easy level. The player has 3 chances to guess a three-letter word.
 
@@ -419,15 +419,15 @@ In the screenshot below, it seems that the player got the letter right.
 
 ![Correct Letter](docs/images/correct_letter.png)
 
-Here is a warning message. It informs the player that the letter is already guessed.
+Here is a warning message. It informs the player that the letter, which is just typed in, is already guessed.
 
 ![Wrong Letter](docs/images/duplicate_guess.png)
 
-The luck does not stay long with our friend, the player got it wrong in the screenshot below.
+The luck does not stay long with our friend, the player got the letter wrong in the screenshot below.
 
 ![Wrong Letter](docs/images/wrong_letter.png)
 
-There are a list error messages can also appear if the player enters invalid inputs, such like: non-alphabetic characters or pressing Ctrl C and Ctrl D. A Selected example is presented in the following screenshots.
+There is a list of error messages that can also appear if the player enters invalid inputs, such like: non-alphabetic characters or pressing Ctrl C and Ctrl D. A Selected example is presented in the following screenshots.
 
 ![Input letter Error Message](docs/images/input_letter_err_msg.png)
 
@@ -435,14 +435,14 @@ A Won message appears when the player guesses all the letter correctly without e
 
 ![Win Message](docs/images/win_msg.png)
 
-if the player exhausted all the chances the loss message appears, as shown below:
+If the player exhausted all the chances the loss message appears, as shown below:
 
 ![Loss Message](docs/images/loss_msg.png)
 
-As it can be seen from the two screenshots above, once the game is concluded a messages appears asking the player if game reset is needed.
+As it can be seen from the two screenshots above, once the game is concluded a messages appears asking the player if a game reset is needed.
 
 In case the player entered invalid input for the reset message, an error message appears. Such scenario happens when the player neither enter "yes"/"y" for reset nor "no"/"n" for exit.
-The error message also considers a situation if the player pressed Ctrl C or Ctrl D. A selected example is shown below:
+The error message also considers the situation where the player pressed Ctrl C or Ctrl D. A selected example is shown below:
 
 ![Reset Error Message](docs/images/reset_err_msg_ctrl_c.png)
 
@@ -463,7 +463,7 @@ The game has the potential to extend its capabilities to include additional opti
 
 1. Extending the difficulty levels to cover words with 4, 7 letters or more
 2. More languages can be included to reach larger base of players who are interested to play the game in other languages
-3. A score to account for the number of words are guessed with each game round
+3. A score to count the number of guessed words with each round
 
 ## 5 Credits
 
@@ -492,5 +492,5 @@ The game has the potential to extend its capabilities to include additional opti
 
 I would like to express my sincere gratitude to Mr. David Bowers for his outstanding mentorship. With every project, he proves 
 again and again his dedication and integrity to provide all what a student might need to success. Moreover, his advice and encouragement to use classes for 
-this project is particularly appreciated. Additionally, the his provision of further resources on the topic has helped me immensely in this project.
-I would also like to thank my family for playing the game and providing their feedback on its outlook and interface.
+this project is particularly appreciated. Additionally, his provision of further resources on the topic has helped me immensely in this project.
+I would also like to thank my family for playing the game and providing their feedback on its look and interface.
