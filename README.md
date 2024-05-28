@@ -5,9 +5,13 @@ It's the difference between the lightning bug and the lightning" (Mark Twain)**
 
 ## 1. Introduction
 
+The word guesser is an online python-based terminal game developed as part of Code Institute third project requirement.
+
+### 1.1 How To Play
+
 The word guesser is a game revolves around figuring out the word the computer is picked.
-The player then tries to guess the word letter by letter. The player wins if all the guessed letters
-are correct given a limited number of tries/chances.
+The player is required to guess the selected word by the computer letter by letter.
+The player wins if all the guessed letters are correct given a limited number of tries/chances.
 The number of chances is defined as how many wrong letters are entered by the player before losing.
 The player has three type of chances according to the difficulty choice. The difficulty choices are:
 
