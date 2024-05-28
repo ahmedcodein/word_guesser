@@ -42,7 +42,20 @@ The following screenshot shows the test result of Wave. It is worth mentioning h
 
 The following screenshot shows the test result of W3C Markup Validation Service. The result does not show any errors.
 
-![W3C HTML](docs/images/w3c-html.png)
+![W3C HTML](docs/images/w3c_html.png)
+
+## W3C CSS Validation Service
+
+The following screenshot shows the test result of W3C CSS Validation Service. The result does not show any errors. However, there are two warnings appear in the test. These are:
+
+- -ms-user-select is a vendor extension
+- -webkit-user-select is a vendor extension
+
+The author did not try resolve these warnings since they come with the original Python console. 
+
+![W3C HTML](docs/images/w3c_css.png)
+
+![W3C CSS](docs/images/w3c_css_warnings.png)
 
 ## Chrome DevTools
 

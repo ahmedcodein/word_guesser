@@ -340,9 +340,10 @@ The test results of CI Python Linter are summarized in the table below. The test
 | Test ID No. | Test Name | Test Result | Test Comment|
 | ----------- |---------- |------------ |------------ |
 | 1 | CI Python Linter| pass |The test is conducted for each class |
-| 2 | Lighthouse Test| pass | |
-| 3 | Web Accessibility Evaluation Tools (Wave)| pass with one alert | see the Unfixed bugs|
+| 2 | Manual Test of every conceivable player input and game scenario |Pass | |
+| 3 | Lighthouse Test| pass | |
 | 4 | W3C Markup Validation Service| pass ||
+| 5 | W3C CSS Validation Service| pass with two warnings. The warnings are: -ms-user-select is a vendor extension and -webkit-user-select is a vendor extension |Please refer to unfixed bugs|
 
 #### 2.5.5. Bugs
 
@@ -364,9 +365,10 @@ In this subsection a list of unfixed bugs with description is provided. The list
 
 | Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
 | -----------| ----------- |---------- |------------ |------------ |
-|1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
-|2| HTML file|Withing the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
-|3| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
+|1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
+|2| HTML file|Withing the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
+|3| Game URL| -ms-user-select is a vendor extension and -webkit-user-select is a vendor extension|NA| The author decides to leave the warnings the way they are since the they come with original Python console. Please refer to [Test file](test.md) to see the screenshot|
+|4| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
 
 ## 2.5.6 Deployment, Clone and Fork Procedures
 
