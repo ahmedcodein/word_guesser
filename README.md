@@ -212,7 +212,7 @@ In conclusion, a few small changes occur to the Pseudocode, e.g. changing method
 
 ### 2.5. Execution
 
-The execution phase consists of six subsection. The first subsection lists the technologies used to develop the game. Features are presented in the second section. The third section is devoted for The test results. A full subsection is then devoted to discuss the bugs encountered during the development. This subsection also provides a detailed account of bugs that left without fixing. The final subsection is developed to describe the deployment procedures.
+The execution phase consists of six subsections. The first subsection lists the technologies used to develop the game. Features are presented in the second subsection. The data model is discussed in the third subsection. The fourth subsection is devoted for the test results. A full subsection is then devoted to discuss the bugs encountered during the development. This subsection also provides a detailed account of bugs that left without fixing. The final subsection is developed to describe the deployment procedures.
 
 #### 2.5.1. Technologies Used
 
@@ -224,7 +224,7 @@ The following list of technologies are used to develop the game:
 4. Heroku: Development Platform
 5. CI Python Linter: Python code style convention checker
 
-## 2.5.2 Features
+#### 2.5.2 Features
 
 This section provides a detailed description of the main features of the game with screenshots.
 
@@ -374,7 +374,7 @@ In this subsection a list of unfixed bugs with description is provided. The list
 |3| Game URL| -ms-user-select is a vendor extension and -webkit-user-select is a vendor extension|NA| The author decides to leave the warnings the way they are since the they come with original Python console. Please refer to [Test file](test.md) to see the screenshot|
 |4| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [Test file](test.md) to see the screenshot|
 
-## 2.5.6 Deployment, Clone and Fork Procedures
+#### 2.5.6 Deployment, Clone and Fork Procedures
 
 This section is devoted to explain procedures conducted by the author to deploy and clone the game code. Additionally, for those who are interested to create fork from the main branch, a dedicated procedure is also provided.
 
