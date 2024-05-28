@@ -90,7 +90,7 @@ Based on the main objectives presented in 2.2, 2.2.1 and 2.2.2, the following li
 
 ### 2.4. Planning
 
-In the following subsections the game logic and a conceptual data model are presented. 
+In the following subsection the game logic developed during the planing phase is presented. 
 
 #### 2.4.1. Game Logic
 
@@ -206,18 +206,9 @@ restart_game:
 
 In conclusion, a few small changes occur to the Pseudocode, e.g. changing method names etc... However, the change described in the note above represents the only major change to the Pseudocode.
 
-#### 2.4.2 The Conceptual Data Model
-
-In this section, the conceptual data model of the game is presented. This conceptual data model is built after the development is complete. It is therefore might not be fully suited to be part of the planing phase. However, the author includes it in here because it aids the understanding of the game logic.
-
-The game consists of five classes and one mixin class. The mixin class contains methods that can be used by any of the other classes.
-As it is shown in the figure below, all the relationships are one to one relationship with an initiate rule.
-
-![Conceptual Data Model](docs/images/conceptual_data_model.png)
-
 ### 2.5. Execution
 
-The execution phase consists of four subsection. The first subsection lists the technologies used to develop the game. The test results are presented in the second subsection. A full subsection is devoted to discuss the bugs encountered during the development. This subsection also provides a detailed account of bugs that left without fixing. The final subsection is developed to describe the deployment procedures.
+The execution phase consists of six subsection. The first subsection lists the technologies used to develop the game. Features are presented in the second section. The third section is devoted for The test results. A full subsection is then devoted to discuss the bugs encountered during the development. This subsection also provides a detailed account of bugs that left without fixing. The final subsection is developed to describe the deployment procedures.
 
 #### 2.5.1. Technologies Used
 
@@ -227,135 +218,9 @@ The following list of technologies are used to develop the game:
 2. GitHub: Development Platform
 3. Gitpod: Cloud Development Environment
 4. Heroku: Development Platform
-5. CI Python Linter: Python code style convention checker 
+5. CI Python Linter: Python code style convention checker
 
-#### 2.5.2 Test Results
-
-The test results of CI Python Linter are summarized in the table below. The test comes out clear from any errors or warnings. The test captures can be found in 
-[Test file](test.md).
-
-| Test ID No. | Test Name | Test Result | Test Comment|
-| ----------- |---------- |------------ |------------ |
-| 1 | CI Python Linter| pass |The test is conducted for each class |
-| 2 | Lighthouse Test| pass | |
-| 3 | Web Accessibility Evaluation Tools (Wave)| pass with one alert | see the Unfixed bugs|
-| 4 | W3C Markup Validation Service| pass ||
-
-#### 2.5.3. Bugs
-
-This subsection is devoted to summarize the bugs encountered by the author during the development. The subsection is divided into two subsections. The first is devoted for the fixed bugs. While the second is devoted to describe the unfixed bugs.
-
-##### 2.5.3.1. Fixed Bugs
-
-In this subsection, a list of fixed bugs is recounted with a description of how they are fixed.
-
-| Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
-| -----------| ----------- |---------- |------------ |------------ |
-|1| Class DifficultySelection in line 38|f-string is used without variable | The f-string is removed| |
-|2| Class WordSelector|In case of short list of words in word_bank, the search does not fully cover all the words in the list | Introducing a counter that has a length equals to the length of the word_bank. This ensures the complete word search in the word_bank| |
-|3| Classes: Player, DifficultySelection, PlayerGuess and GameMixins|When using a For loop for dictionary with items() method, an alert is observed. The alert complains that either the key or the value of the dictionary is not used | Use either values() or keys() methods instead of the items() method. Then remove the unused item, i.e. either the key or the value from the For loop| |
-
-##### 2.5.3.2 Unfixed Bugs
-
-In this subsection a list of unfixed bugs with description is provided. The list contains three bugs, all of them are not the result of the author under performing (Big Claim!). The three bugs, to the best of the author knowledge, come with the original Python console.
-
-| Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
-| -----------| ----------- |---------- |------------ |------------ |
-|1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
-|2| HTML file|Withing the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
-|3| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
-
-## 2.5.4. Deployment, Clone and Fork Procedures
-
-This section is devoted to explain procedures conducted by the author to deploy and clone the game code. Additionally, for those who are interested to create fork from the main branch, a dedicated procedure is also provided.
-
-- Heroku
-
-The following procedure is implemented to deploy the game on Heroku platform:
-
-1. Create a list of requirements/dependencies for the game. In order to that, the following steps is to be executed:
-    - Go to the command line terminal of development environment (Gitpod)
-    - Type "pip3 freeze > requirements.txt" (requirements.txt is the file where the list of requirements is stored)
-    - Add this change and commit it
-    - Push the change to the GitHub repository
-2. Sign in to Heroku account 
-3. On Heroku dashboard, click on "Create a new app" button
-4. Within the "Create New App" window, go to the "App name" input field and type in an App name
-5. Within the same window, choose your region from the "Choose region" dropdown menu
-6. Click on "Create app" button
-7. New window opens for the App that is just created
-8. Within this window, from the 7 taps available, select "Settings"
-9. Within the setting tap window, go to "Confg Vars"
-10. Click on "Create Confg Vars"
-11. Two input fields appear, one for key and one for value
-    - Within the "key" input field type: PORT
-    - Within the "value" field type: 8000
-    - Click on "Add"
-12. Scroll down to "Buildpacks", within the Buildpacks, follow the listed sub-steps below:
-    - Click on "Add buildpacks"
-    - A "Add buildpack" window opens
-    - From the list, choose "Python" first
-    - Click on "Save changes" button
-    - From the same list, choose "nodejs" second
-    - Click on "Save changes" button
-    - Ensure Keeping the order packs as described in last 4 sub-steps
-13. Now go to the "Deploy" tap right at the top of the window
-14. Within the "Deployment method" row, click on "GitHub" button
-15. Within the "Connect to GitHub" (One row down the Deployment method) click on "Connect to GitHub"
-16. Wait a bit for loading
-17. Now on the same row and within the search field, type the name of the project repository and click on "Search" button
-18. Now click connect
-19. Once it is connected to the project repository, scroll down to "Manual Deploy"
-20. Within this row, click on "Deploy Branch"
-21. Once the deploy log is finished, a message appears and hopefully says: "You app was successfully deployed"
-22. Below it a "View" button appears as well
-22. Click on the "View" to open the deployed project on a new browser tap 
-
-**Note: Throughout the development, the author chooses only the manual deployment.**
-
-- GitHub
-
-The following procedure is followed to create the game repository
-
-1. Go to your repositories 
-2. Open CI P3-template
-3. On the top right, click on "Use this template"
-4. Click on "Create a new repository"
-5. New window opens
-6. In the field of "Repository name" type the project name
-7. Choose public
-8. Then click on "Create repository"
-
-- Clone into Gitpod
-
-The following procedure is implemented to clone from the GiTHub repo into Gitpod:
-
-1. Go to the "code" in the upper right corner
-2. Select "local" 
-3. Select "Clone/HTTPs"
-4. Copy the url provided
-5. Open new browser tap
-6. Open your Gitpod Workspace
-7. Click on "Create new workspace"
-8. Click on "select new Repository"
-9. Paste the url in input window
-10. Click continue
-
-- Fork
-
-For any person interested to work on the source code of this project, here is the procedure that needs to be followed to make a fork.
-
-1. Go to ahmedcodein repositories
-2. Click on "word_guesser" repo
-3. In the upper right corner, click of "fork" drop down menu
-4. Click on "create new fork"
-5. Create new fork window opens
-6. Select the "owner" of the repo
-7. Add a name to "Repository name"
-8. Add a description to the "Description" field if needed
-9. Click on "Create fork "
-
-## 3. Features
+## 2.5.2 Features
 
 This section provides a detailed description of the main features of the game with screenshots.
 
@@ -457,7 +322,143 @@ The last feature is the Favicon for the website. The Favicon consists of two let
 
 ![Favicon](docs/images/favicon.png)
 
-## 4 Future Work
+
+#### 2.5.3 The Conceptual Data Model
+
+In this section, the conceptual data model of the game is presented. This conceptual data model is built after the development is complete. It is therefore might not be fully suited to be part of the planing phase. However, the author includes it in here because it aids the understanding of the game logic.
+
+The game consists of five classes and one mixin class. The mixin class contains methods that can be used by any of the other classes.
+As it is shown in the figure below, all the relationships are one to one relationship with an initiate rule.
+
+![Conceptual Data Model](docs/images/conceptual_data_model.png)
+
+#### 2.5.4 Test Results
+
+The test results of CI Python Linter are summarized in the table below. The test comes out clear from any errors or warnings. The test captures can be found in 
+[Test file](test.md).
+
+| Test ID No. | Test Name | Test Result | Test Comment|
+| ----------- |---------- |------------ |------------ |
+| 1 | CI Python Linter| pass |The test is conducted for each class |
+| 2 | Lighthouse Test| pass | |
+| 3 | Web Accessibility Evaluation Tools (Wave)| pass with one alert | see the Unfixed bugs|
+| 4 | W3C Markup Validation Service| pass ||
+
+#### 2.5.5. Bugs
+
+This subsection is devoted to summarize the bugs encountered by the author during the development. The subsection is divided into two subsections. The first is devoted for the fixed bugs. While the second is devoted to describe the unfixed bugs.
+
+##### 2.5.5.1. Fixed Bugs
+
+In this subsection, a list of fixed bugs is recounted with a description of how they are fixed.
+
+| Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
+| -----------| ----------- |---------- |------------ |------------ |
+|1| Class DifficultySelection in line 38|f-string is used without variable | The f-string is removed| |
+|2| Class WordSelector|In case of short list of words in word_bank, the search does not fully cover all the words in the list | Introducing a counter that has a length equals to the length of the word_bank. This ensures the complete word search in the word_bank| |
+|3| Classes: Player, DifficultySelection, PlayerGuess and GameMixins|When using a For loop for dictionary with items() method, an alert is observed. The alert complains that either the key or the value of the dictionary is not used | Use either values() or keys() methods instead of the items() method. Then remove the unused item, i.e. either the key or the value from the For loop| |
+
+##### 2.5.5.2 Unfixed Bugs
+
+In this subsection a list of unfixed bugs with description is provided. The list contains three bugs, all of them are not the result of the author under performing (Big Claim!). The three bugs, to the best of the author knowledge, come with the original Python console.
+
+| Bug ID No. | Bug Position | Bug Description | Bug Solution | Comment|
+| -----------| ----------- |---------- |------------ |------------ |
+|1| HTML file| Alert of a missing heading structure | Add H1 element with content| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
+|2| HTML file|Withing the Chrome DevTools: a form field element should have an id or name attribute. A form field element has neither an id nor a name attribute. This might prevent the browser from correctly auto filling the form | Chrome DevTools suggestion is to add a unique id or name attribute to a form field. This is not strictly needed, but still recommended even if you have an autocomplete attribute on the same element| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
+|3| CI Python Console|When the game is reset multiple times the console does not effectively clear the screen completely, resulting in accumulating snaps of screen views from earlier rounds| NA| The author decides to leave it the way it is since the alert comes with original Python console. Please refer to [test.md](test.md) to see the screenshot|
+
+## 2.5.6 Deployment, Clone and Fork Procedures
+
+This section is devoted to explain procedures conducted by the author to deploy and clone the game code. Additionally, for those who are interested to create fork from the main branch, a dedicated procedure is also provided.
+
+- Heroku
+
+The following procedure is implemented to deploy the game on Heroku platform:
+
+1. Create a list of requirements/dependencies for the game. In order to that, the following steps is to be executed:
+    - Go to the command line terminal of development environment (Gitpod)
+    - Type "pip3 freeze > requirements.txt" (requirements.txt is the file where the list of requirements is stored)
+    - Add this change and commit it
+    - Push the change to the GitHub repository
+2. Sign in to Heroku account 
+3. On Heroku dashboard, click on "Create a new app" button
+4. Within the "Create New App" window, go to the "App name" input field and type in an App name
+5. Within the same window, choose your region from the "Choose region" dropdown menu
+6. Click on "Create app" button
+7. New window opens for the App that is just created
+8. Within this window, from the 7 taps available, select "Settings"
+9. Within the setting tap window, go to "Confg Vars"
+10. Click on "Create Confg Vars"
+11. Two input fields appear, one for key and one for value
+    - Within the "key" input field type: PORT
+    - Within the "value" field type: 8000
+    - Click on "Add"
+12. Scroll down to "Buildpacks", within the Buildpacks, follow the listed sub-steps below:
+    - Click on "Add buildpacks"
+    - A "Add buildpack" window opens
+    - From the list, choose "Python" first
+    - Click on "Save changes" button
+    - From the same list, choose "nodejs" second
+    - Click on "Save changes" button
+    - Ensure Keeping the order packs as described in last 4 sub-steps
+13. Now go to the "Deploy" tap right at the top of the window
+14. Within the "Deployment method" row, click on "GitHub" button
+15. Within the "Connect to GitHub" (One row down the Deployment method) click on "Connect to GitHub"
+16. Wait a bit for loading
+17. Now on the same row and within the search field, type the name of the project repository and click on "Search" button
+18. Now click connect
+19. Once it is connected to the project repository, scroll down to "Manual Deploy"
+20. Within this row, click on "Deploy Branch"
+21. Once the deploy log is finished, a message appears and hopefully says: "You app was successfully deployed"
+22. Below it a "View" button appears as well
+22. Click on the "View" to open the deployed project on a new browser tap 
+
+**Note: Throughout the development, the author chooses only the manual deployment.**
+
+- GitHub
+
+The following procedure is followed to create the game repository
+
+1. Go to your repositories 
+2. Open CI P3-template
+3. On the top right, click on "Use this template"
+4. Click on "Create a new repository"
+5. New window opens
+6. In the field of "Repository name" type the project name
+7. Choose public
+8. Then click on "Create repository"
+
+- Clone into Gitpod
+
+The following procedure is implemented to clone from the GiTHub repo into Gitpod:
+
+1. Go to the "code" in the upper right corner
+2. Select "local" 
+3. Select "Clone/HTTPs"
+4. Copy the url provided
+5. Open new browser tap
+6. Open your Gitpod Workspace
+7. Click on "Create new workspace"
+8. Click on "select new Repository"
+9. Paste the url in input window
+10. Click continue
+
+- Fork
+
+For any person interested to work on the source code of this project, here is the procedure that needs to be followed to make a fork.
+
+1. Go to ahmedcodein repositories
+2. Click on "word_guesser" repo
+3. In the upper right corner, click of "fork" drop down menu
+4. Click on "create new fork"
+5. Create new fork window opens
+6. Select the "owner" of the repo
+7. Add a name to "Repository name"
+8. Add a description to the "Description" field if needed
+9. Click on "Create fork "
+
+## 3 Future Work
 
 The game has the potential to extend its capabilities to include additional options and features, for instance:
 
@@ -465,9 +466,9 @@ The game has the potential to extend its capabilities to include additional opti
 2. More languages can be included to reach larger base of players who are interested to play the game in other languages
 3. A score to count the number of guessed words with each round
 
-## 5 Credits
+## 4 Credits
 
-### 5.1 References
+### 4.1 References
 
 - CI Study Materials, [Code Institute](https://codeinstitute.net/de/bildungsgutschein/?utm_term=code%20institute&utm_campaign=CI%2B-%2BUK%2B-%2BSearch%2B-%2BBrand&utm_source=adwords&utm_medium=ppc&hsa_acc=8983321581&hsa_cam=16493764737&hsa_grp=132915436966&hsa_ad=635790877675&hsa_src=g&hsa_tgt=kwd-319867646331&hsa_kw=code%20institute&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw3tCyBhDBARIsAEY0XNlk5PQerlGAVupYRw0WPKtdiPb9QBFPzUv-YEGIv5cb6FJe1G24uVwaAoZKEALw_wcB)
 - CI PP3 Student Project, [Battleships](https://github.com/dnlbowers/battleships)
@@ -480,7 +481,7 @@ The game has the potential to extend its capabilities to include additional opti
 - Markdown Cheat Sheet, [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
 - Conventional Commits, [A specification for adding human and machine readable meaning to commit messages](https://www.conventionalcommits.org/en/v1.0.0/)
 
-### 5.2. Content and Tools
+### 4.2. Content and Tools
 
 - [ChatGPT](https://chat.openai.com/auth/login?sso) is used to generate the Background and the Favicon images. It is also used to generate the list of words required for this game. Additionally, it is used to understand various programming concepts.
 - [Word counter](https://wordcounter.net/character-count) is used to track the number of characters of each git commit.
@@ -488,7 +489,7 @@ The game has the potential to extend its capabilities to include additional opti
 - [Image Resizer](https://redketchup.io/image-resizer) is used to convert the favicon row image from Web Picture (Webp) into Portable Network Graphics (PNG) extension.
 - [Lucid](https://lucid.app/documents#/documents?folder_id=home) is used to create the Conceptual Data Model
 
-### 5.3. Acknowledgement
+### 4.3. Acknowledgement
 
 I would like to express my sincere gratitude to Mr. David Bowers for his outstanding mentorship. With every project, he proves 
 again and again his dedication and integrity to provide all what a student might need to success. Moreover, his advice and encouragement to use classes for 
